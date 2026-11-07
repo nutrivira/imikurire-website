@@ -623,13 +623,16 @@
                             <div class="w-16 h-16 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-2">
                                 <i data-lucide="clock" class="w-8 h-8"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-white">Permission Pending Review</h4>
+                            <h4 class="font-heading font-bold text-lg text-white">Permission Access Logged</h4>
                             <p class="text-xs text-slate-300 max-w-xs mx-auto">
-                                An access email has been dispatched to <strong>magnibmg@gmail.com</strong>. Accounts remain locked until Magnifique authorizes the request.
+                                An instant access notification email has been prepared for <strong class="text-emerald-400">magnibmg@gmail.com</strong>.
                             </p>
-                            <div class="pt-4 border-t border-white/10">
-                                <p class="text-[11px] text-slate-400 mb-2">Are you Magnifique testing this approval?</p>
-                                <button onclick="grantAdminPermission()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-xl text-xs transition-all">
+                            <div class="pt-4 border-t border-white/10 space-y-3">
+                                <a id="directMailtoLink" href="#" target="_blank" class="block w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition-all text-center">
+                                    Send Notification Email to Magnifique Now
+                                </a>
+                                <p class="text-[11px] text-slate-400">Are you Magnifique testing this approval?</p>
+                                <button onclick="grantAdminPermission()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-xl text-xs transition-all">
                                     [Authorize & Unlock Accounts]
                                 </button>
                             </div>
@@ -840,39 +843,27 @@
         }
 
         // Secure Permission Request for magnibmg@gmail.com
-        async function requestFundingAccess(e) {
+        function requestFundingAccess(e) {
             e.preventDefault();
             const org = document.getElementById('reqOrg').value;
             const email = document.getElementById('reqEmail').value;
             const btn = document.getElementById('submitFundingBtn');
 
-            btn.textContent = "Sending permission request to magnibmg@gmail.com...";
+            btn.textContent = "Processing request...";
             btn.disabled = true;
 
-            try {
-                await fetch('https://formspree.io/f/xblydzqe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        organization: org,
-                        message: `PERMISSION REQUEST: ${org} (${email}) is requesting permission to view bank/MoMo account details. Please accept or deny.`
-                    })
-                });
-            } catch (err) {
-                console.log("Mailto fallback");
-            }
-
-            // Open mailto to email Magnifique directly
+            // Construct direct mailto link for Magnifique
             const subject = encodeURIComponent("PERMISSION REQUEST: Funding Accounts Access - " + org);
-            const body = encodeURIComponent(`Hello Magnifique,%0A%0AInstitution "${org}" (${email}) is requesting permission to view your bank and MoMo details.%0A%0ATo grant access, reply to this email or visit your website admin view.`);
-            window.location.href = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
+            const body = encodeURIComponent(`Hello Magnifique,\n\nAn institution has requested permission to view your bank and MoMo account details:\n\n- Institution: ${org}\n- Representative Email: ${email}\n\nTo approve this access, reply to them directly or authorize on your website view.`);
+            
+            const mailtoUrl = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
+            document.getElementById('directMailtoLink').href = mailtoUrl;
 
             setTimeout(() => {
                 document.getElementById('fundingRevealBox').classList.add('hidden');
                 document.getElementById('fundingPendingBox').classList.remove('hidden');
                 lucide.createIcons();
-            }, 600);
+            }, 400);
         }
 
         function grantAdminPermission() {
