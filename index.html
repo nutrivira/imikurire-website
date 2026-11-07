@@ -572,6 +572,11 @@
                 <p class="text-slate-600 mt-4 text-base">
                     Institutions and grant providers looking to scale the Imikurire Project can request access to our verified bank and mobile money channels.
                 </p>
+                <div class="mt-4">
+                    <button onclick="toggleModal('adminModal')" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-medium px-4 py-2 rounded-xl text-xs shadow">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-emerald-400"></i> Magnifique Admin Portal (Review Requests)
+                    </button>
+                </div>
             </div>
 
             <div class="bg-gradient-to-br from-slate-900 to-navy-900 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
@@ -584,11 +589,11 @@
                         </div>
                         <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">Protected Account Details</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            For maximum security, account details are <strong>never</strong> visible by default. Every view request triggers an instant permission alert to Magnifique at <strong>magnibmg@gmail.com</strong> with a secure approval link.
+                            For maximum security, account details are <strong>strictly locked</strong> by default. When an institution requests access, it enters Magnifique's Admin Portal for review and approval.
                         </p>
                         <div class="space-y-3 text-xs text-slate-300">
-                            <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> Hidden until Magnifique approves via email link</div>
-                            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i> No account details sent over email—unlocked securely on web</div>
+                            <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> Hidden until Magnifique approves in Admin Portal</div>
+                            <div class="flex items-center gap-2"><i data-lucide="key" class="w-4 h-4 text-emerald-400"></i> Secure session unlock upon approval</div>
                         </div>
                     </div>
 
@@ -621,17 +626,12 @@
                         <!-- Step 2: Pending State -->
                         <div id="fundingPendingBox" class="hidden space-y-4 text-center py-8">
                             <div class="w-16 h-16 bg-emerald-500/25 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-2">
-                                <i data-lucide="mail-check" class="w-8 h-8"></i>
+                                <i data-lucide="clock" class="w-8 h-8 animate-spin"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-white">Permission Request Dispatched</h4>
+                            <h4 class="font-heading font-bold text-lg text-white">Request Logged & Pending Approval</h4>
                             <p class="text-xs text-slate-300 max-w-xs mx-auto">
-                                Click below to send the access notification email to <strong class="text-emerald-400">magnibmg@gmail.com</strong> with your secure approval link.
+                                Your request has been sent to Magnifique's Admin Portal at <strong class="text-emerald-400">magnibmg@gmail.com</strong>. Once approved, account details will unlock automatically.
                             </p>
-                            <div class="pt-2">
-                                <a id="directMailtoLink" href="#" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl text-xs transition-all text-center shadow-lg">
-                                    Send Notification Email to Magnifique Now
-                                </a>
-                            </div>
                         </div>
 
                         <!-- Step 3: Strictly Protected Details Container (Revealed ONLY when authorized) -->
@@ -676,6 +676,53 @@
             </div>
         </div>
     </section>
+
+    <!-- Magnifique Admin Portal Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl border border-slate-200 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleModal('adminModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">MN</div>
+                <div>
+                    <h3 class="font-heading font-bold text-xl text-slate-900">Magnifique Admin Portal</h3>
+                    <p class="text-xs text-slate-500">Review and approve institutional funding access requests</p>
+                </div>
+            </div>
+
+            <!-- Pin Authentication View -->
+            <div id="adminLoginView" class="space-y-4 py-4">
+                <p class="text-xs text-slate-600">Enter Admin PIN to access review dashboard (Default PIN: <code class="bg-slate-100 px-1.5 py-0.5 rounded font-mono text-slate-800">1998</code>):</p>
+                <div class="flex gap-3">
+                    <input type="password" id="adminPinInput" placeholder="Enter PIN" class="w-full px-4 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-emerald-600 font-mono">
+                    <button onclick="verifyAdminPin()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2 rounded-xl text-xs shrink-0">
+                        Login
+                    </button>
+                </div>
+                <p id="adminLoginError" class="text-xs text-red-500 hidden font-medium">Incorrect PIN. Please try again.</p>
+            </div>
+
+            <!-- Admin Requests Dashboard View -->
+            <div id="adminDashboardView" class="hidden space-y-6">
+                <div class="flex items-center justify-between bg-slate-50 p-4 rounded-2xl border border-slate-100">
+                    <div>
+                        <span class="text-xs text-slate-500 block font-medium">Signed in as</span>
+                        <strong class="text-xs text-slate-900">Magnifique Nyabagabo (magnibmg@gmail.com)</strong>
+                    </div>
+                    <button onclick="lockAdminPortal()" class="text-xs text-red-600 hover:underline font-semibold">Logout</button>
+                </div>
+
+                <div>
+                    <h4 class="font-heading font-bold text-sm text-slate-900 mb-3">Incoming Institutional Requests (<span id="requestCount">0</span>)</h4>
+                    <div id="adminRequestsList" class="space-y-3">
+                        <!-- Dynamically populated requests -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Partner CTA -->
     <section class="py-16 bg-gradient-to-br from-slate-900 to-navy-900 text-white relative overflow-hidden">
@@ -772,6 +819,53 @@
         </div>
     </footer>
 
+    <!-- Magnifique Admin Modal -->
+    <div id="adminModal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative text-white">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Admin Login View -->
+            <div id="adminLoginView" class="space-y-6">
+                <div class="text-center">
+                    <div class="w-14 h-14 bg-brand-600/20 text-brand-400 rounded-2xl flex items-center justify-center mx-auto mb-3">
+                        <i data-lucide="shield-alert" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl">Magnifique Admin Portal</h3>
+                    <p class="text-xs text-slate-400 mt-1">Enter your admin PIN (default: <span class="font-mono text-emerald-400">1998</span> or set your own) to review incoming access requests.</p>
+                </div>
+
+                <div class="max-w-xs mx-auto space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 mb-1">Admin Passcode / PIN</label>
+                        <input type="password" id="adminPinInput" placeholder="Enter 4-digit PIN" class="w-full px-4 py-2.5 bg-black/50 border border-slate-700 rounded-xl text-center tracking-widest text-lg font-mono text-white focus:outline-none focus:border-emerald-500">
+                    </div>
+                    <button onclick="verifyAdminPin()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-xl text-sm shadow-lg transition-all">
+                        Access Admin Dashboard
+                    </button>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard View -->
+            <div id="adminDashboardView" class="hidden space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="font-heading font-bold text-xl text-white">Institutional Access Requests</h3>
+                        <p class="text-xs text-slate-400">Review pending institutions and grant access to account numbers.</p>
+                    </div>
+                    <button onclick="lockAdminSession()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg">
+                        Lock Admin
+                    </button>
+                </div>
+
+                <div id="requestsListContainer" class="space-y-3 max-h-80 overflow-y-auto pr-1">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Partner Modal -->
     <div id="partnerModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative">
@@ -827,21 +921,25 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Check if page loaded with approval token
+        // Local Storage state for requests
+        let fundingRequests = JSON.parse(localStorage.getItem('nutrivira_requests') || '[]');
+
+        // Check if session is already approved
         window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('approve') === 'true') {
+            const isApproved = localStorage.getItem('nutrivira_approved') === 'true';
+            if (isApproved) {
                 document.getElementById('fundingRevealBox').classList.add('hidden');
                 document.getElementById('fundingPendingBox').classList.add('hidden');
                 document.getElementById('fundingDetailsContainer').classList.remove('hidden');
-                // Scroll smoothly to funding section
-                document.getElementById('funding').scrollIntoView({ behavior: 'smooth' });
             }
         });
 
         function toggleModal(id) {
             const modal = document.getElementById(id);
             modal.classList.toggle('hidden');
+            if(id === 'adminModal') {
+                renderAdminRequests();
+            }
         }
 
         function handleFormSubmit(e) {
@@ -850,32 +948,113 @@
             toggleModal('partnerModal');
         }
 
-        // Secure Permission Request for magnibmg@gmail.com with approval link
+        // Request Funding Access
         function requestFundingAccess(e) {
             e.preventDefault();
             const org = document.getElementById('reqOrg').value;
             const email = document.getElementById('reqEmail').value;
             const btn = document.getElementById('submitFundingBtn');
 
-            btn.textContent = "Processing request...";
+            btn.textContent = "Submitting to Magnifique...";
             btn.disabled = true;
 
-            // Generate secure approval URL pointing back to website with ?approve=true
-            const currentUrl = window.location.href.split('?')[0];
-            const approvalLink = `${currentUrl}?approve=true`;
-
-            // Construct mailto body without putting account details in email
-            const subject = encodeURIComponent("PERMISSION REQUEST: Funding Accounts Access - " + org);
-            const body = encodeURIComponent(`Hello Magnifique,\n\nAn institution has requested permission to view your bank and MoMo account details:\n\n- Institution: ${org}\n- Representative Email: ${email}\n\nTo review and unlock these details securely on your website without sending account numbers via email, click the link below:\n\n${approvalLink}`);
-            
-            const mailtoUrl = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
-            document.getElementById('directMailtoLink').href = mailtoUrl;
+            // Save request to localStorage so admin portal can see it
+            const newReq = {
+                id: Date.now(),
+                org: org,
+                email: email,
+                time: new Date().toLocaleTimeString() + ' ' + new Date().toLocaleDateString(),
+                status: 'pending'
+            };
+            fundingRequests.unshift(newReq);
+            localStorage.setItem('nutrivira_requests', JSON.stringify(fundingRequests));
 
             setTimeout(() => {
                 document.getElementById('fundingRevealBox').classList.add('hidden');
                 document.getElementById('fundingPendingBox').classList.remove('hidden');
                 lucide.createIcons();
-            }, 400);
+            }, 500);
+        }
+
+        // Admin Pin Verification
+        function verifyAdminPin() {
+            const pin = document.getElementById('adminPinInput').value;
+            if (pin === '1998') {
+                document.getElementById('adminLoginView').classList.add('hidden');
+                document.getElementById('adminDashboardView').classList.remove('hidden');
+                document.getElementById('adminLoginError').classList.add('hidden');
+                renderAdminRequests();
+            } else {
+                document.getElementById('adminLoginError').classList.remove('hidden');
+            }
+        }
+
+        function lockAdminPortal() {
+            document.getElementById('adminLoginView').classList.remove('hidden');
+            document.getElementById('adminDashboardView').classList.add('hidden');
+            document.getElementById('adminPinInput').value = '';
+        }
+
+        function renderAdminRequests() {
+            const list = document.getElementById('adminRequestsList');
+            const countEl = document.getElementById('requestCount');
+            fundingRequests = JSON.parse(localStorage.getItem('nutrivira_requests') || '[]');
+            countEl.textContent = fundingRequests.length;
+
+            if(fundingRequests.length === 0) {
+                list.innerHTML = `<div class="text-center py-8 text-xs text-slate-400 bg-slate-50 rounded-2xl">No pending institutional requests yet.</div>`;
+                return;
+            }
+
+            list.innerHTML = '';
+            fundingRequests.forEach(req => {
+                const item = document.createElement('div');
+                item.className = "bg-slate-50 p-4 rounded-2xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs";
+                item.innerHTML = `
+                    <div>
+                        <span class="font-bold text-slate-900 block text-sm">${req.org}</span>
+                        <span class="text-slate-500">${req.email} • <span class="text-slate-400">${req.time}</span></span>
+                        <span class="inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-semibold ${req.status === 'approved' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}">${req.status.toUpperCase()}</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        ${req.status !== 'approved' ? `
+                            <button onclick="approveRequest(${req.id})" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg font-semibold transition-colors">
+                                [Accept & Unlock]
+                            </button>
+                        ` : `
+                            <span class="text-emerald-600 font-semibold flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5"></i> Approved</span>
+                        `}
+                        <button onclick="deleteRequest(${req.id})" class="text-slate-400 hover:text-red-600 p-1.5">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+            lucide.createIcons();
+        }
+
+        function approveRequest(id) {
+            fundingRequests = fundingRequests.map(r => {
+                if(r.id === id) r.status = 'approved';
+                return r;
+            });
+            localStorage.setItem('nutrivira_requests', JSON.stringify(fundingRequests));
+            localStorage.setItem('nutrivira_approved', 'true');
+            
+            // Unlock on main view if open
+            document.getElementById('fundingRevealBox').classList.add('hidden');
+            document.getElementById('fundingPendingBox').classList.add('hidden');
+            document.getElementById('fundingDetailsContainer').classList.remove('hidden');
+
+            renderAdminRequests();
+            alert("Request approved successfully! Account details are now unlocked.");
+        }
+
+        function deleteRequest(id) {
+            fundingRequests = fundingRequests.filter(r => r.id !== id);
+            localStorage.setItem('nutrivira_requests', JSON.stringify(fundingRequests));
+            renderAdminRequests();
         }
 
         // 18 Natural Ingredients Data with Verified Reliable Food Images
