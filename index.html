@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -91,10 +91,14 @@
             </nav>
 
             <!-- Action Button -->
-            <div class="hidden md:flex items-center gap-4">
-                <button onclick="toggleModal('partnerModal')" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-brand-600/25 transition-all duration-200 hover:-translate-y-0.5 text-sm">
+            <div class="hidden md:flex items-center gap-3">
+                <a href="https://wa.me/250787721205?text=Hello%20Nutrivira%20Team,%20I%20would%20like%20to%20connect%20regarding%20the%20Imikurire%20Project." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2.5 rounded-full shadow-md shadow-emerald-600/20 transition-all text-sm">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    WhatsApp Direct
+                </a>
+                <button onclick="toggleModal('partnerModal')" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-4 py-2.5 rounded-full shadow-lg shadow-brand-600/25 transition-all text-sm">
                     <i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                    Partner With Us
+                    Partner
                 </button>
             </div>
 
@@ -113,10 +117,15 @@
             <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Our Team</a>
             <a href="#roadmap" class="block px-3 py-2 rounded-md text-slate-700 font-medium hover:bg-slate-50">Milestones</a>
             <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
-            <button onclick="toggleModal('partnerModal')" class="w-full mt-2 inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium px-5 py-2.5 rounded-full text-sm">
-                <i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                Partner With Us
-            </button>
+            
+            <div class="pt-2 grid grid-cols-2 gap-2">
+                <a href="https://wa.me/250787721205?text=Hello%20Nutrivira%20Team," target="_blank" class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 text-white font-medium px-3 py-2.5 rounded-xl text-xs">
+                    <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+                <button onclick="toggleModal('partnerModal')" class="inline-flex items-center justify-center gap-1.5 bg-brand-600 text-white font-medium px-3 py-2.5 rounded-xl text-xs">
+                    <i data-lucide="heart-handshake" class="w-3.5 h-3.5"></i> Partner
+                </button>
+            </div>
         </div>
     </header>
 
@@ -250,8 +259,8 @@
                 <!-- Product 1 -->
                 <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div class="relative h-56 bg-slate-100 overflow-hidden group">
-                        <!-- PHOTO: Upload product image to GitHub repository and update src="image-name.jpg" -->
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80" alt="IMIKURIRE Porridge Blend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <!-- PHOTO: Natural Porridge Blend & Grains -->
+                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80" alt="IMIKURIRE Porridge Blend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
                             Flagship Product
                         </div>
@@ -273,21 +282,22 @@
                 <!-- Product 2 -->
                 <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div class="relative h-56 bg-slate-100 overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Kitchen Garden Kits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <!-- PHOTO: Organic Grains & Legumes Ingredients -->
+                        <img src="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?auto=format&fit=crop&w=800&q=80" alt="Natural Grains & Ingredients" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Community Model
+                            Natural Ingredients
                         </div>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Kitchen Garden & Crop Kits</h3>
+                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Sorghum & Legume Blend</h3>
                             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                Biofortified seed varieties integrated into household kitchen gardens, addressing malnutrition through community-based agriculture.
+                                Sourced from local smallholder farmers in Rwanda, our ingredients undergo triple-activation processing to eliminate anti-nutrients and enhance absorption.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-teal-600 bg-teal-50 px-2.5 py-1 rounded-lg">Agronomic Scale</span>
-                            <span class="text-xs text-slate-400">ECD & Co-Op Model</span>
+                            <span class="text-xs font-semibold text-teal-600 bg-teal-50 px-2.5 py-1 rounded-lg">Locally Sourced</span>
+                            <span class="text-xs text-slate-400">Pure Grains</span>
                         </div>
                     </div>
                 </div>
@@ -295,21 +305,22 @@
                 <!-- Product 3 -->
                 <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
                     <div class="relative h-56 bg-slate-100 overflow-hidden group">
-                        <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80" alt="Diagnostic Assays" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <!-- PHOTO: Kitchen Garden & Biofortified Crops -->
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Kitchen Garden Kits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-3 right-3 bg-navy-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
-                            Diagnostic Protocol
+                            Community Model
                         </div>
                     </div>
                     <div class="p-6 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Biomarker Assessment Protocol</h3>
+                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Kitchen Garden & Crop Kits</h3>
                             <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                                Point-of-care screening protocols tracking gut inflammation (Fecal Calprotectin) to measure mucosal recovery in treated cohorts.
+                                Biofortified seed varieties integrated into household kitchen gardens, addressing malnutrition through sustainable community-based agriculture.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-xs font-semibold text-navy-800 bg-slate-100 px-2.5 py-1 rounded-lg">Clinical Grade</span>
-                            <span class="text-xs text-slate-400">CHUK & UR Lab Standard</span>
+                            <span class="text-xs font-semibold text-navy-800 bg-slate-100 px-2.5 py-1 rounded-lg">Agronomic Scale</span>
+                            <span class="text-xs text-slate-400">ECD & Co-Op Model</span>
                         </div>
                     </div>
                 </div>
@@ -675,16 +686,22 @@
     <!-- Partner CTA -->
     <section class="py-16 bg-gradient-to-br from-slate-900 to-navy-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Partner With Nutrivira Ltd</h2>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Open Communication & Direct Contact</h2>
             <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
-                Collaborate with our multidisciplinary team on clinical research, nutrition expansion, and community health scaling.
+                Have questions or want to collaborate? Connect directly with the Nutrivira Ltd leadership team instantly via WhatsApp, phone, or email.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button onclick="toggleModal('partnerModal')" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-brand-500/25 transition-all">
-                    Inquire About Partnership
-                </button>
-                <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-full backdrop-blur-sm border border-white/10 transition-all">
-                    Contact Us Direct
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/250787721205?text=Hello%20Nutrivira%20Team,%20I%20would%20like%20to%20connect%20regarding%20the%20Imikurire%20Project." target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-emerald-600/30 transition-all">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Chat on WhatsApp (+250 787 721 205)
+                </a>
+                <a href="mailto:nutrivira730@gmail.com" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-brand-600/25 transition-all">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Email nutrivira730@gmail.com
+                </a>
+                <a href="tel:+250787721205" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-full backdrop-blur-sm border border-white/10 transition-all">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Call Us Direct
                 </a>
             </div>
         </div>
