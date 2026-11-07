@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imikurire Project - Child Growth, Biotechnology & Nutrition Initiative</title>
+    <title>Imikurire Project | Nutrivira Ltd - Child Growth & Biotechnology Initiative</title>
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nutrivira.github.io/imikurire-website/" />
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Plus Jakarta Sans -->
@@ -72,16 +74,18 @@
                     <i data-lucide="sprout" class="w-6 h-6"></i>
                 </div>
                 <div>
-                    <span class="font-heading font-bold text-xl tracking-tight text-slate-900 block leading-none">IMIKURIRE</span>
-                    <span class="text-[10px] font-semibold tracking-wider text-brand-600 uppercase">Biotech & Nutrition</span>
+                    <span class="font-heading font-bold text-xl tracking-tight text-slate-900 block leading-none">NUTRIVIRA</span>
+                    <span class="text-[10px] font-semibold tracking-wider text-brand-600 uppercase">IMIKURIRE Project</span>
                 </div>
             </a>
 
             <!-- Desktop Links -->
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-                <a href="#about" class="hover:text-brand-600 transition-colors">About Initiative</a>
+            <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
+                <a href="#products" class="hover:text-brand-600 transition-colors">Products</a>
                 <a href="#biotech" class="hover:text-brand-600 transition-colors">Biotechnology</a>
                 <a href="#tracker" class="hover:text-brand-600 transition-colors">Growth Tracker</a>
+                <a href="#team" class="hover:text-brand-600 transition-colors">Our Team</a>
                 <a href="#roadmap" class="hover:text-brand-600 transition-colors">Milestones</a>
                 <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
             </nav>
@@ -90,7 +94,7 @@
             <div class="hidden md:flex items-center gap-4">
                 <button onclick="toggleModal('partnerModal')" class="inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-medium px-5 py-2.5 rounded-full shadow-lg shadow-brand-600/25 transition-all duration-200 hover:-translate-y-0.5 text-sm">
                     <i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                    Partner / Support Us
+                    Partner With Us
                 </button>
             </div>
 
@@ -103,19 +107,21 @@
         <!-- Mobile Navigation Menu -->
         <div id="mobileMenu" class="hidden md:hidden border-t border-slate-100 bg-white px-4 pt-3 pb-6 space-y-3">
             <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">About Initiative</a>
-            <a href="#biotech" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Biotechnology & Nutrition</a>
+            <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Products & Innovations</a>
+            <a href="#biotech" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Biotechnology & Science</a>
             <a href="#tracker" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Growth Tracker Demo</a>
+            <a href="#team" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Our Team</a>
             <a href="#roadmap" class="block px-3 py-2 rounded-md text-slate-700 font-medium hover:bg-slate-50">Milestones</a>
             <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50">Contact</a>
             <button onclick="toggleModal('partnerModal')" class="w-full mt-2 inline-flex items-center justify-center gap-2 bg-brand-600 text-white font-medium px-5 py-2.5 rounded-full text-sm">
                 <i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                Partner / Support Us
+                Partner With Us
             </button>
         </div>
     </header>
 
     <!-- 2. Hero Section -->
-    <section class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden hero-bg">
+    <section id="about" class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden hero-bg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
@@ -123,22 +129,22 @@
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
                     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold tracking-wide uppercase">
                         <i data-lucide="dna" class="w-4 h-4 text-brand-600"></i>
-                        Scientific Innovation in Child Health
+                        Nutrivira Ltd • Science-Backed Nutrition
                     </div>
                     <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                         Ending Child Stunting Through <span class="gradient-text">Biotechnology & Precision Nutrition</span>
                     </h1>
                     <p class="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        The Imikurire Project leverages bio-fortification, local agricultural processing, and biomarker monitoring to ensure optimal gut health and robust early childhood growth.
+                        The Imikurire Project leverages food bio-fortification, local agricultural processing, and gut biomarker monitoring to eliminate stunting in the first 1,000 days of childhood development.
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#biotech" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-0.5">
-                            Learn More
+                        <a href="#products" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-slate-900/10 transition-all hover:-translate-y-0.5">
+                            View Products
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
                         <button onclick="downloadBrief()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-7 py-3.5 rounded-full border border-slate-200 shadow-sm transition-all hover:border-slate-300">
                             <i data-lucide="download" class="w-4 h-4 text-brand-600"></i>
-                            Download Executive Brief
+                            Executive Summary
                         </button>
                     </div>
 
@@ -150,11 +156,11 @@
                         </div>
                         <div>
                             <div class="font-heading font-bold text-2xl sm:text-3xl text-brand-600">85%+</div>
-                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Nutrient Retention</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Nutrient Bioavailability</div>
                         </div>
                         <div>
-                            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">Kigali</div>
-                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Research Hub, Rwanda</div>
+                            <div class="font-heading font-bold text-2xl sm:text-3xl text-slate-900">Masoro</div>
+                            <div class="text-xs sm:text-sm text-slate-500 font-medium">Kigali, Rwanda</div>
                         </div>
                     </div>
                 </div>
@@ -162,7 +168,6 @@
                 <!-- Hero Graphic Component -->
                 <div class="lg:col-span-5 relative">
                     <div class="relative mx-auto max-w-md lg:max-w-none">
-                        <!-- Main Illustration Container -->
                         <div class="relative bg-white p-6 sm:p-8 rounded-3xl shadow-xl border border-slate-100">
                             <div class="absolute -top-3 -right-3 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md flex items-center gap-1">
                                 <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Clinical Grade
@@ -176,17 +181,16 @@
                                         </div>
                                         <div>
                                             <h3 class="font-bold text-slate-900">Biomarker Profiling</h3>
-                                            <p class="text-xs text-slate-500">Gut Inflammation Tracking</p>
+                                            <p class="text-xs text-slate-500">Gut Health & Calprotectin</p>
                                         </div>
                                     </div>
                                     <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">Optimal</span>
                                 </div>
 
-                                <!-- Progress indicators inside hero visual -->
                                 <div class="space-y-3">
                                     <div>
                                         <div class="flex justify-between text-xs font-medium mb-1">
-                                            <span class="text-slate-600">Micronutrient Absorption Rate</span>
+                                            <span class="text-slate-600">Micronutrient Bioavailability</span>
                                             <span class="text-slate-900 font-bold">94%</span>
                                         </div>
                                         <div class="w-full bg-slate-100 rounded-full h-2">
@@ -211,20 +215,19 @@
                                     </div>
                                     <div class="text-xs">
                                         <span class="font-bold text-slate-800 block">Enhanced Local Crops</span>
-                                        <span class="text-slate-500">Fermented sorghum & biofortified legume blend.</span>
+                                        <span class="text-slate-500">Fermented sorghum & biofortified legume formulation.</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Secondary floating card -->
                         <div class="absolute -bottom-6 -left-6 bg-slate-900 text-white p-4 rounded-2xl shadow-xl max-w-[220px] hidden sm:flex items-center gap-3">
                             <div class="w-9 h-9 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0">
                                 <i data-lucide="trending-up" class="w-5 h-5"></i>
                             </div>
                             <div class="text-xs">
                                 <p class="font-bold">Zero Stunting Goal</p>
-                                <p class="text-slate-400">Targeting 1000 Days Window</p>
+                                <p class="text-slate-400">First 1,000 Days Window</p>
                             </div>
                         </div>
                     </div>
@@ -234,110 +237,175 @@
         </div>
     </section>
 
-    <!-- 3. Core Science & Biotechnology Pillars Section -->
+    <!-- 3. Products & Innovations -->
+    <section id="products" class="py-20 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Nutrivira Innovations</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Bio-Fortified Solutions</h2>
+                <p class="text-slate-600 mt-4 text-base">Developed to optimize nutrient absorption and gut health during early childhood growth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <!-- PHOTO: Upload product image to GitHub repository and update src="image-name.jpg" -->
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80" alt="IMIKURIRE Porridge Blend" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Flagship Product
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">IMIKURIRE Bio-Fortified Porridge</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                A high-nutrient complementary flour produced through controlled germination and microbial fermentation, maximizing bioavailable iron, zinc, and key amino acids.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded-lg">High Bioavailability</span>
+                            <span class="text-xs text-slate-400">Rusasa Pilot Proven</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=80" alt="Kitchen Garden Kits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Community Model
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Kitchen Garden & Crop Kits</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                Biofortified seed varieties integrated into household kitchen gardens, addressing malnutrition through community-based agriculture.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-teal-600 bg-teal-50 px-2.5 py-1 rounded-lg">Agronomic Scale</span>
+                            <span class="text-xs text-slate-400">ECD & Co-Op Model</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col">
+                    <div class="relative h-56 bg-slate-100 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=800&q=80" alt="Diagnostic Assays" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 right-3 bg-navy-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow">
+                            Diagnostic Protocol
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-heading font-bold text-xl text-slate-900 mb-2">Biomarker Assessment Protocol</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+                                Point-of-care screening protocols tracking gut inflammation (Fecal Calprotectin) to measure mucosal recovery in treated cohorts.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                            <span class="text-xs font-semibold text-navy-800 bg-slate-100 px-2.5 py-1 rounded-lg">Clinical Grade</span>
+                            <span class="text-xs text-slate-400">CHUK & UR Lab Standard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Core Science & Biotechnology Pillars -->
     <section id="biotech" class="py-20 bg-white border-y border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Scientific Pillars</span>
                 <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Driven by Science, Proven by Results</h2>
-                <p class="text-slate-600 mt-4 text-base sm:text-lg">Combining traditional local nutrition with advanced biotechnology to optimize bioavailability and combat chronic malnutrition.</p>
+                <p class="text-slate-600 mt-4 text-base sm:text-lg">Combining traditional local food systems with advanced biotechnology to optimize nutrient uptake.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Pillar 1 -->
-                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100 hover:border-slate-200">
+                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100">
                     <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
                         <i data-lucide="flask-conical" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Triple-Activation Bio-Fortification</h3>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Triple-Activation Processing</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Utilizing controlled germination, microbial fermentation, and enzymatic treatment of local grains to reduce anti-nutrients (phytates) and unlock essential iron, zinc, and protein.
+                        Controlled germination, microbial fermentation, and bio-fortification reduce anti-nutrients (phytates) and maximize micro-nutrient absorption.
                     </p>
                     <ul class="space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200/60 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600"></i> Reduced Phytate Inhibition
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600"></i> Enhanced Mineral Bioavailability
-                        </li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600"></i> Reduced Phytate Inhibition</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-brand-600"></i> Superior Bioavailability</li>
                     </ul>
                 </div>
 
                 <!-- Pillar 2 -->
-                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100 hover:border-slate-200">
+                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100">
                     <div class="w-14 h-14 rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
                         <i data-lucide="activity" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Clinical Biomarker Monitoring</h3>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Biomarker Clinical Monitoring</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Evaluating gut enteropathy and mucosal healing via non-invasive biomarker assays (such as Fecal Calprotectin), tracking real health status beyond simple weight indicators.
+                        Tracking environmental enteric dysfunction (EED) and mucosal recovery using Fecal Calprotectin assays and growth indices.
                     </p>
                     <ul class="space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200/60 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600"></i> Gut Mucosal Health Audits
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600"></i> Quantitative Inflammatory Tracking
-                        </li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600"></i> Non-Invasive Diagnostics</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-teal-600"></i> Evidence-Based Growth Outcomes</li>
                     </ul>
                 </div>
 
                 <!-- Pillar 3 -->
-                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100 hover:border-slate-200">
+                <div class="group bg-slate-50 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white border border-slate-100">
                     <div class="w-14 h-14 rounded-2xl bg-navy-800/10 text-navy-800 flex items-center justify-center mb-6 group-hover:bg-navy-800 group-hover:text-white transition-colors">
                         <i data-lucide="users" class="w-7 h-7"></i>
                     </div>
-                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Community Scalable Impact</h3>
+                    <h3 class="font-heading font-bold text-xl text-slate-900 mb-3">Community Scalable Model</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-4">
-                        Empowering local smallholders and healthcare centers with low-cost processing models, creating sustainable nutrition ecosystems directly within targeted communities.
+                        Empowering smallholder farmers, healthcare centers, and caregiver networks across Rwanda with accessible bio-fortified nutritional security.
                     </p>
                     <ul class="space-y-2 text-xs font-medium text-slate-500 border-t border-slate-200/60 pt-4">
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-slate-800"></i> Local Value Chain Integration
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-slate-800"></i> High-Adherence Food Formats
-                        </li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-slate-800"></i> Agricultural Integration</li>
+                        <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-slate-800"></i> Scalable Distribution</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 4. Interactive Biomarker / Growth Tracker Demo -->
+    <!-- 5. Growth Indicator Simulation Tracker -->
     <section id="tracker" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Left Details -->
                 <div class="lg:col-span-5 space-y-6">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 text-teal-700 text-xs font-semibold uppercase tracking-wider">
                         <i data-lucide="calculator" class="w-3.5 h-3.5"></i> Interactive Demo
                     </div>
-                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">Child Growth & Health Indicator Preview</h2>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900">Child Growth Indicator Simulation</h2>
                     <p class="text-slate-600 text-base leading-relaxed">
-                        Use this interactive simulation to see how nutrient bio-fortification and gut health recovery correlate with optimal growth metrics during the critical first 1,000 days.
+                        Test how nutrient bio-fortification and gut mucosal recovery directly correlate with height-for-age progress (Z-scores) in infants.
                     </p>
                     <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm space-y-3">
                         <div class="flex items-start gap-3 text-xs">
                             <i data-lucide="info" class="w-5 h-5 text-teal-600 shrink-0 mt-0.5"></i>
-                            <span class="text-slate-600"><strong>Note:</strong> Calprotectin values &lt; 50 µg/g indicate low intestinal inflammation, enabling maximum growth potential.</span>
+                            <span class="text-slate-600"><strong>Clinical Standard:</strong> Fecal Calprotectin levels below 50 µg/g indicate healthy gut mucosal integrity.</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right Calculator Card -->
                 <div class="lg:col-span-7">
                     <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-xl">
                         <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-                            <h3 class="font-heading font-bold text-slate-900 text-lg">Growth Indicator Simulation</h3>
-                            <span class="text-xs text-slate-400">Imikurire Metric Model v1.2</span>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Nutritional Response Simulation</h3>
+                            <span class="text-xs text-slate-400">Nutrivira Engine v1.2</span>
                         </div>
 
-                        <!-- Form Controls -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-600 mb-1">Child Age (Months)</label>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">Age (Months)</label>
                                 <input type="number" id="ageInput" min="6" max="36" value="18" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold focus:outline-none focus:border-brand-500">
                             </div>
                             <div>
@@ -347,34 +415,32 @@
                             <div>
                                 <label class="block text-xs font-semibold text-slate-600 mb-1">Diet Regime</label>
                                 <select id="dietInput" class="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm font-semibold focus:outline-none focus:border-brand-500">
-                                    <option value="standard">Standard Unfortified</option>
+                                    <option value="standard">Standard Flour</option>
                                     <option value="imikurire" selected>Imikurire Bio-Fortified</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Dynamic Output Cards -->
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                             <div class="bg-brand-50/50 p-4 rounded-2xl border border-brand-100 text-center">
-                                <span class="text-xs text-slate-500 font-medium block">HAZ (Height-for-Age Score)</span>
+                                <span class="text-xs text-slate-500 font-medium block">HAZ (Height-for-Age Z)</span>
                                 <span id="hazScore" class="text-2xl font-bold text-brand-700 font-heading">+0.4 Z</span>
                                 <span id="hazStatus" class="text-[11px] text-brand-600 font-medium block mt-0.5">Optimal Growth</span>
                             </div>
 
                             <div class="bg-teal-50/50 p-4 rounded-2xl border border-teal-100 text-center">
-                                <span class="text-xs text-slate-500 font-medium block">Est. Fecal Calprotectin</span>
+                                <span class="text-xs text-slate-500 font-medium block">Calprotectin Level</span>
                                 <span id="calScore" class="text-2xl font-bold text-teal-700 font-heading">38 µg/g</span>
                                 <span id="calStatus" class="text-[11px] text-teal-600 font-medium block mt-0.5">Normal / Low Inflammation</span>
                             </div>
 
                             <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 text-center">
-                                <span class="text-xs text-slate-500 font-medium block">Nutrient Bioavailability</span>
+                                <span class="text-xs text-slate-500 font-medium block">Bioavailability</span>
                                 <span id="bioScore" class="text-2xl font-bold text-slate-800 font-heading">88%</span>
                                 <span id="bioStatus" class="text-[11px] text-slate-500 font-medium block mt-0.5">High Absorption</span>
                             </div>
                         </div>
 
-                        <!-- Chart Visual Canvas -->
                         <div class="h-48 w-full bg-slate-50 rounded-2xl p-2 border border-slate-100">
                             <canvas id="trackerChart"></canvas>
                         </div>
@@ -385,19 +451,178 @@
         </div>
     </section>
 
-    <!-- 5. Impact & Milestones Roadmap -->
-    <section id="roadmap" class="py-20 bg-white border-t border-slate-100">
+    <!-- 6. Leadership & Scientific Team Section -->
+    <section id="team" class="py-20 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Leadership & Founders</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Our Multidisciplinary Team</h2>
+                <p class="text-slate-600 mt-4 text-base">Combining expertise in public health, medicine, biotechnology, laboratory science, software engineering, and financial management.</p>
+            </div>
+
+            <!-- Team Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                
+                <!-- Member 1: Princia -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-brand-600 to-teal-500 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            PA
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Princia Bella Arakaza</h3>
+                            <p class="text-xs text-brand-600 font-semibold">Co-Founder & Managing Director</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Holds a Bachelor's degree in Entrepreneurial Leadership from African Leadership University. Experienced in public health research, field data collection, and stakeholder coordination through roles at Health Development Initiative, ALU School of Health, OEPESD TABARA, and Save the Children. At Nutrivira, she leads overall strategic direction, public health activities, pilot implementation, and stakeholder management.
+                    </p>
+                </div>
+
+                <!-- Member 2: Abdoul Aziz Irakoze -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-teal-600 to-slate-700 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            AI
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Abdoul Aziz Irakoze</h3>
+                            <p class="text-xs text-teal-600 font-semibold">Co-Founder & Chief Operations Officer (COO)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        African social impact practitioner with extensive experience in community mobilization, project coordination, and field research through the ALU Enterprise Innovation Program, Pro-Femmes/TWESE HAMWE’s EDUFAM project, and Raise Them Foundation. At Nutrivira, he manages operational coordination, community engagement, partnerships, and implementation activities.
+                    </p>
+                </div>
+
+                <!-- Member 3: Elie Habiyambere -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-brand-500 to-emerald-700 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            EH
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Elie Habiyambere</h3>
+                            <p class="text-xs text-brand-600 font-semibold">Co-Founder & Head of Product Development & Innovation</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        MGHD student (One Health track) at the University of Global Health Delivery (UGHE) with a background in Medicine. Experienced in gastrointestinal health, malnutrition initiatives, and the Rusasa Sector Kitchen Garden project. Contributes medical, nutrition, and One Health research to IMIKURIRE product innovation.
+                    </p>
+                </div>
+
+                <!-- Member 4: Magnifique Nyabagabo -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-cyan-600 to-teal-700 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            MN
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Magnifique Nyabagabo</h3>
+                            <p class="text-xs text-teal-600 font-semibold">Co-Founder & Head of Food Science & Quality Assurance</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Biomedical Laboratory Scientist from University of Rwanda with clinical laboratory experience at CHUK and Byumba Level Two Teaching Hospital. Expertise includes bio-analytical testing, sample processing protocols, and regulatory compliance preparation to support product safety and quality.
+                    </p>
+                </div>
+
+                <!-- Member 5: Emilienne NDAYONGEJE -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-emerald-600 to-navy-800 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            EN
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Emilienne NDAYONGEJE</h3>
+                            <p class="text-xs text-brand-600 font-semibold">Co-Founder & Head of Research & Impact</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Holds a Bachelor's degree in Entrepreneurial Leadership from ALU. Supported caregivers on balanced child nutrition and early development at ECD Uruyange in Kimironko. Leads data-informed decision-making, research design, monitoring, and impact evaluation across Nutrivira projects.
+                    </p>
+                </div>
+
+                <!-- Member 6: Raissa Mpawenayo -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-slate-700 to-slate-900 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            RM
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Raissa Mpawenayo</h3>
+                            <p class="text-xs text-slate-700 font-semibold">Co-Founder & Head of Finance & Administration</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Entrepreneurial finance professional with experience across Zanda Initiative, Raise Them Foundation, Vanguard Economics, and Agahozo-Shalom Youth Village. Leads financial management, budgeting, sales and expense tracking systems, business modeling, and administration.
+                    </p>
+                </div>
+
+                <!-- Member 7: Loue Sauveur Christian -->
+                <div class="bg-slate-50 rounded-3xl p-6 border border-slate-100 hover:border-brand-500/30 transition-all shadow-sm hover:shadow-md lg:col-span-3 lg:max-w-md lg:mx-auto">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-14 h-14 bg-gradient-to-tr from-blue-600 to-teal-500 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow">
+                            LC
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-slate-900 text-lg">Loue Sauveur Christian</h3>
+                            <p class="text-xs text-blue-600 font-semibold">Co-Founder & Technology & Digital Systems Lead</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Software Engineering graduate from African Leadership University with practical experience in developing technology solutions to community challenges. At Nutrivira, he leads digital architecture, data management systems, and technology-enabled operational expansion.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Core Capabilities Summary -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl">
+                <div class="text-center max-w-2xl mx-auto mb-8">
+                    <span class="text-brand-400 font-semibold text-xs uppercase tracking-wider">Multidisciplinary Foundation</span>
+                    <h3 class="font-heading text-2xl font-bold mt-1">Nutrivira Technical & Operational Capabilities</h3>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs">
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-brand-400 font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="microscope" class="w-4 h-4"></i> Technical & One Health
+                        </div>
+                        <p class="text-slate-300">Medicine, nutrition, food science, biomedical laboratory science, and software engineering.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-teal-400 font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="truck" class="w-4 h-4"></i> Operational Fieldwork
+                        </div>
+                        <p class="text-slate-300">Community mobilization, field research, stakeholder coordination, and monitoring systems.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-emerald-400 font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i> Quality & Regulation
+                        </div>
+                        <p class="text-slate-300">Analytical testing, laboratory protocols, food safety assurance, and compliance preparation.</p>
+                    </div>
+                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
+                        <div class="text-blue-400 font-bold mb-2 flex items-center gap-2">
+                            <i data-lucide="line-chart" class="w-4 h-4"></i> Business & Finance
+                        </div>
+                        <p class="text-slate-300">Financial tracking, budgeting, business modeling, market analysis, and strategic partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Milestones Roadmap -->
+    <section id="roadmap" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-brand-600 font-semibold text-sm uppercase tracking-wider">Project Timeline</span>
                 <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mt-2">Implementation Roadmap</h2>
-                <p class="text-slate-600 mt-4 text-base">From laboratory development to multi-district deployment across Rwanda and beyond.</p>
+                <p class="text-slate-600 mt-4 text-base">From formulation research to community-wide scaling across Rwanda.</p>
             </div>
 
-            <!-- Timeline Components -->
             <div class="relative border-l-2 border-slate-200 ml-4 sm:ml-32 space-y-12">
-
-                <!-- Timeline Item 1 -->
                 <div class="relative pl-8 sm:pl-12 group">
                     <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-brand-600 border-4 border-white flex items-center justify-center text-white shadow">
                         <i data-lucide="check" class="w-4 h-4"></i>
@@ -405,141 +630,139 @@
                     <div class="sm:absolute sm:-left-36 sm:top-1.5 text-xs font-bold uppercase tracking-wider text-brand-600 mb-1 sm:mb-0">
                         Phase 1 (Completed)
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <h3 class="font-heading font-bold text-lg text-slate-900">Formulation & Triple-Activation Lab Testing</h3>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Formulation & Phytate Reduction Trials</h3>
                         <p class="text-slate-600 text-sm mt-2">
-                            Optimization of bio-fortification parameters using local sorghum, beans, and sweet potato varieties. Verified phytate reduction levels exceeding 70% in lab trials.
+                            Development of bio-fortification processing parameters using local sorghum, bean, and sweet potato varieties to unlock bioavailable iron and zinc.
                         </p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
                 <div class="relative pl-8 sm:pl-12 group">
                     <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-teal-500 border-4 border-white flex items-center justify-center text-white shadow">
                         <i data-lucide="flask-conical" class="w-4 h-4"></i>
                     </div>
                     <div class="sm:absolute sm:-left-36 sm:top-1.5 text-xs font-bold uppercase tracking-wider text-teal-600 mb-1 sm:mb-0">
-                        Phase 2 (Current)
+                        Phase 2 (Active)
                     </div>
                     <div class="bg-white p-6 rounded-2xl border-2 border-teal-500 shadow-md">
-                        <div class="inline-block px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 text-[11px] font-bold uppercase mb-2">Active Clinical Pilot</div>
-                        <h3 class="font-heading font-bold text-lg text-slate-900">Biomarker Validation Study</h3>
+                        <div class="inline-block px-2.5 py-0.5 rounded-full bg-teal-50 text-teal-700 text-[11px] font-bold uppercase mb-2">Community Pilot</div>
+                        <h3 class="font-heading font-bold text-lg text-slate-900">Rusasa & ECD Pilot Implementation</h3>
                         <p class="text-slate-600 text-sm mt-2">
-                            Conducting cohort monitoring across selected healthcare centers in Rwanda. Evaluating Fecal Calprotectin levels and length-for-age progression over a 6-month trial window.
+                            Field testing complementary porridge and kitchen garden models while establishing quantitative biomarker monitoring protocols for gut health evaluation.
                         </p>
                     </div>
                 </div>
 
-                <!-- Timeline Item 3 -->
                 <div class="relative pl-8 sm:pl-12 group">
                     <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-slate-300 border-4 border-white flex items-center justify-center text-slate-600 shadow">
                         <i data-lucide="layers" class="w-4 h-4"></i>
                     </div>
                     <div class="sm:absolute sm:-left-36 sm:top-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 mb-1 sm:mb-0">
-                        Phase 3 (Upcoming)
+                        Phase 3 (Scaling)
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                        <h3 class="font-heading font-bold text-lg text-slate-900">District-Level Community Scaling</h3>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:shadow-md transition-shadow">
+                        <h3 class="font-heading font-bold text-lg text-slate-900">District-Level Operations & Regulatory Certification</h3>
                         <p class="text-slate-600 text-sm mt-2">
-                            Expanding processing facilities and distribution networks to reach over 15,000 households, integrating local farmer cooperatives into the supply chain.
+                            Expansion of food processing capacity, regulatory compliance certification, and distribution partnerships with health centers and cooperatives.
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Partner / CTA Section -->
+    <!-- Partner CTA -->
     <section class="py-16 bg-gradient-to-br from-slate-900 to-navy-900 text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Join Us in Scaling Nutrition Innovation</h2>
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">Partner With Nutrivira Ltd</h2>
             <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
-                We are actively seeking research collaborators, development funders, and health partners to expand the impact of the Imikurire Project.
+                Collaborate with our multidisciplinary team on clinical research, nutrition expansion, and community health scaling.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <button onclick="toggleModal('partnerModal')" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-8 py-3.5 rounded-full shadow-lg shadow-brand-500/25 transition-all">
-                    Get Involved
+                    Inquire About Partnership
                 </button>
                 <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-8 py-3.5 rounded-full backdrop-blur-sm border border-white/10 transition-all">
-                    Contact Team
+                    Contact Us Direct
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- 6. Footer -->
+    <!-- 8. Footer -->
     <footer id="contact" class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-slate-800">
                 
-                <!-- Col 1: About -->
                 <div class="space-y-4 md:col-span-1">
                     <div class="flex items-center gap-3 text-white">
                         <div class="w-8 h-8 rounded-lg bg-brand-500 flex items-center justify-center">
                             <i data-lucide="sprout" class="w-5 h-5 text-white"></i>
                         </div>
-                        <span class="font-heading font-bold text-lg tracking-tight">IMIKURIRE</span>
+                        <span class="font-heading font-bold text-lg tracking-tight">NUTRIVIRA LTD</span>
                     </div>
                     <p class="text-xs text-slate-400 leading-relaxed">
-                        Bio-Fortification, Gut Health & Child Growth Initiative dedicated to eliminating early childhood stunting through scalable scientific solutions.
+                        Imikurire Project: Bio-Fortification, Gut Health & Child Growth Initiative dedicated to eliminating stunting through biotechnology and multidisciplinary social impact.
                     </p>
                 </div>
 
-                <!-- Col 2: Quick Links -->
                 <div>
                     <h4 class="text-white font-semibold text-sm mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-xs">
-                        <li><a href="#about" class="hover:text-white transition-colors">About Initiative</a></li>
-                        <li><a href="#biotech" class="hover:text-white transition-colors">Biotechnology & Science</a></li>
-                        <li><a href="#tracker" class="hover:text-white transition-colors">Biomarker Indicator Demo</a></li>
-                        <li><a href="#roadmap" class="hover:text-white transition-colors">Roadmap & Milestones</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">About Project</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Products & Innovations</a></li>
+                        <li><a href="#biotech" class="hover:text-white transition-colors">Biotechnology</a></li>
+                        <li><a href="#team" class="hover:text-white transition-colors">Our Team</a></li>
+                        <li><a href="#roadmap" class="hover:text-white transition-colors">Roadmap</a></li>
                     </ul>
                 </div>
 
-                <!-- Col 3: Focus Areas -->
                 <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Key Focus</h4>
+                    <h4 class="text-white font-semibold text-sm mb-4">Capabilities</h4>
                     <ul class="space-y-2 text-xs">
-                        <li>Triple-Activation Processing</li>
-                        <li>Fecal Calprotectin Assays</li>
-                        <li>First 1,000 Days Nutrition</li>
-                        <li>Community Co-Op Integration</li>
+                        <li>Bio-Fortification Science</li>
+                        <li>Biomarker & Lab Testing</li>
+                        <li>Community Fieldwork</li>
+                        <li>Quality & Regulatory Readiness</li>
                     </ul>
                 </div>
 
-                <!-- Col 4: Contact & Location -->
                 <div>
-                    <h4 class="text-white font-semibold text-sm mb-4">Location & Contact</h4>
+                    <h4 class="text-white font-semibold text-sm mb-4">Contact Information</h4>
                     <ul class="space-y-3 text-xs">
                         <li class="flex items-start gap-2">
                             <i data-lucide="map-pin" class="w-4 h-4 text-brand-500 shrink-0"></i>
-                            <span>nutrivira-ltd,masoro, Kigali, Rwanda</span>
+                            <span>Nutrivira Ltd, Masoro, Kigali, Rwanda</span>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="mail" class="w-4 h-4 text-brand-500 shrink-0"></i>
-                            <span>nutrivira730@gmail.com</span>
+                            <a href="mailto:nutrivira730@gmail.com" class="hover:text-white">nutrivira730@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                            <a href="tel:+250787721205" class="hover:text-white">+250 787 721 205</a>
                         </li>
                         <li class="flex items-center gap-2">
                             <i data-lucide="globe" class="w-4 h-4 text-brand-500 shrink-0"></i>
-                            <span>https://nutrivira.github.io/imikurire-website</span>
+                            <a href="https://nutrivira.github.io/imikurire-website" class="hover:text-white">nutrivira.github.io/imikurire-website</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; <span id="year"></span> Imikurire Project. All rights reserved.</p>
+                <p>&copy; <span id="year"></span> Nutrivira Ltd. All rights reserved.</p>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-slate-400">Privacy Policy</a>
                     <a href="#" class="hover:text-slate-400">Research Ethics</a>
-                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400">Quality Assurance</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Partner / Support Modal -->
+    <!-- Partner Modal -->
     <div id="partnerModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-100 relative">
             <button onclick="toggleModal('partnerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
@@ -550,8 +773,8 @@
                 <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center mx-auto mb-3">
                     <i data-lucide="heart-handshake" class="w-6 h-6"></i>
                 </div>
-                <h3 class="font-heading font-bold text-xl text-slate-900">Partner With Imikurire</h3>
-                <p class="text-xs text-slate-500 mt-1">Join us in driving sustainable child health breakthroughs.</p>
+                <h3 class="font-heading font-bold text-xl text-slate-900">Partner With Nutrivira Ltd</h3>
+                <p class="text-xs text-slate-500 mt-1">Direct Email: nutrivira730@gmail.com | Tel: +250 787 721 205</p>
             </div>
 
             <form onsubmit="handleFormSubmit(event)" class="space-y-4">
@@ -570,10 +793,10 @@
                 <div>
                     <label class="block text-xs font-semibold text-slate-600 mb-1">Partnership Interest</label>
                     <select class="w-full px-3 py-2 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-brand-500">
-                        <option>Clinical Research Collaboration</option>
-                        <option>Grant / Funding Support</option>
-                        <option>Community Deployment</option>
-                        <option>General Inquiry</option>
+                        <option>Product & Food Science Research</option>
+                        <option>Grant / Scale Funding</option>
+                        <option>Community Deployment / ECD</option>
+                        <option>Regulatory / Quality Assurance</option>
                     </select>
                 </div>
                 <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl text-sm shadow-md transition-all">
@@ -583,22 +806,17 @@
         </div>
     </div>
 
-    <!-- Interactive Scripts -->
+    <!-- Scripts -->
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
         const mobileBtn = document.getElementById('mobileMenuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Modal Toggle Helper
         function toggleModal(id) {
             const modal = document.getElementById(id);
             modal.classList.toggle('hidden');
@@ -606,15 +824,14 @@
 
         function handleFormSubmit(e) {
             e.preventDefault();
-            alert("Thank you for reaching out! The Imikurire Project team will contact you shortly.");
+            alert("Thank you for reaching out! Nutrivira Ltd will contact you shortly.");
             toggleModal('partnerModal');
         }
 
         function downloadBrief() {
-            alert("Imikurire Project Executive Brief requested. Downloading summary documentation...");
+            alert("Nutrivira Ltd Executive Summary requested.");
         }
 
-        // Calculator & Interactive Chart Logic
         const ageInput = document.getElementById('ageInput');
         const weightInput = document.getElementById('weightInput');
         const dietInput = document.getElementById('dietInput');
@@ -625,7 +842,6 @@
         const calStatus = document.getElementById('calStatus');
         const bioScore = document.getElementById('bioScore');
 
-        // Setup Chart
         const ctx = document.getElementById('trackerChart').getContext('2d');
         let trackerChart = new Chart(ctx, {
             type: 'line',
@@ -646,19 +862,10 @@
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: true }
-                },
+                plugins: { legend: { display: false } },
                 scales: {
-                    y: {
-                        min: -2,
-                        max: 2,
-                        grid: { color: '#f1f5f9' }
-                    },
-                    x: {
-                        grid: { display: false }
-                    }
+                    y: { min: -2, max: 2, grid: { color: '#f1f5f9' } },
+                    x: { grid: { display: false } }
                 }
             }
         });
@@ -692,7 +899,6 @@
             calScore.textContent = `${cal} µg/g`;
             bioScore.textContent = `${bio}%`;
 
-            // Update Chart
             const baseFactor = diet === 'imikurire' ? 0.3 : -0.3;
             trackerChart.data.datasets[0].data = [
                 -1.0 + baseFactor,
@@ -711,7 +917,6 @@
         weightInput.addEventListener('input', updateMetrics);
         dietInput.addEventListener('change', updateMetrics);
 
-        // Initial Calc
         updateMetrics();
     </script>
 </body>
