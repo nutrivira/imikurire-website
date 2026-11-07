@@ -44,117 +44,140 @@
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', Inter, sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(22, 163, 74, 0.15);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(22, 163, 74, 0.1);
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-500 selection:text-white">
 
     <!-- Top Announcement Bar -->
-    <div class="bg-gradient-to-r from-brand-700 via-emerald-600 to-brand-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm">
+    <div class="bg-gradient-to-r from-brand-700 via-emerald-600 to-brand-700 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium shadow-md">
         🌱 <span class="font-bold">Nutrivira Ltd Initiative:</span> Pioneering Biotechnology & Local Bio-Fortified Porridge to Eradicate Child Stunting in Rwanda.
     </div>
 
     <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-brand-500/30">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/30">
                     🌱
                 </div>
                 <div>
-                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-white">IMIKURIRE</span>
-                    <span class="text-xs text-brand-400 block font-semibold">Nutrivira Ltd Initiative</span>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 block leading-tight">IMIKURIRE</span>
+                    <span class="text-[11px] text-brand-600 font-semibold tracking-wider uppercase block">Nutrivira Ltd</span>
                 </div>
             </div>
             
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#about" class="hover:text-brand-400 transition">About</a>
-                <a href="#ingredients" class="hover:text-brand-400 transition">18 Ingredients</a>
-                <a href="#products" class="hover:text-brand-400 transition">Products</a>
-                <a href="#roadmap" class="hover:text-brand-400 transition">Roadmap</a>
-                <a href="#funding" class="hover:text-brand-400 transition text-brand-400 font-semibold">Institutional Funding</a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-brand-600 transition">About</a>
+                <a href="#ingredients" class="hover:text-brand-600 transition">18 Ingredients</a>
+                <a href="#products" class="hover:text-brand-600 transition">Products</a>
+                <a href="#team" class="hover:text-brand-600 transition">Leadership Team</a>
+                <a href="#roadmap" class="hover:text-brand-600 transition">Roadmap</a>
+                <a href="#funding" class="hover:text-brand-600 transition font-semibold text-brand-600">Institutional Funding</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <a href="#funding" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition shadow-lg shadow-brand-600/20">
+                <!-- WhatsApp Quick Connect Top Nav Button -->
+                <a href="https://wa.me/250787721205?text=Hello%20Imikurire%20Team,%20I%20would%20like%20to%20connect%20regarding%20the%20project." target="_blank" rel="noopener noreferrer" class="hidden lg:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 font-bold text-xs transition">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>+250 787 721 205</span>
+                </a>
+                <a href="#funding" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition shadow-lg shadow-brand-600/20 hover:scale-[1.02]">
                     <i data-lucide="shield-check" class="w-4 h-4"></i>
                     <span>Partner Portal</span>
                 </a>
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 hover:text-slate-900">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
         
         <!-- Mobile Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-3">
-            <a href="#about" class="block text-slate-300 hover:text-brand-400 py-1">About</a>
-            <a href="#ingredients" class="block text-slate-300 hover:text-brand-400 py-1">18 Ingredients</a>
-            <a href="#products" class="block text-slate-300 hover:text-brand-400 py-1">Products</a>
-            <a href="#roadmap" class="block text-slate-300 hover:text-brand-400 py-1">Roadmap</a>
-            <a href="#funding" class="block text-brand-400 font-semibold py-1">Institutional Funding</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200 px-6 py-6 space-y-4 shadow-2xl">
+            <a href="#about" class="block text-slate-700 hover:text-brand-600 font-medium py-1">About</a>
+            <a href="#ingredients" class="block text-slate-700 hover:text-brand-600 font-medium py-1">18 Ingredients</a>
+            <a href="#products" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Products</a>
+            <a href="#tracker" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Growth Tracker</a>
+            <a href="#team" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Leadership Team</a>
+            <a href="#roadmap" class="block text-slate-700 hover:text-brand-600 font-medium py-1">Roadmap</a>
+            <a href="#funding" class="block text-brand-600 font-bold py-1">Institutional Funding</a>
+            <div class="pt-3 border-t border-slate-200">
+                <a href="https://wa.me/250787721205?text=Hello%20Imikurire%20Team" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-emerald-600 text-white font-bold text-sm shadow-lg">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    <span>WhatsApp: +250 787 721 205</span>
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-b from-white via-slate-50 to-white">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#16a34a_1px,transparent_1px)] [background-size:24px_24px]"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 <div class="lg:col-span-7 space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-400 text-xs sm:text-sm font-semibold tracking-wide">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs sm:text-sm font-semibold tracking-wide shadow-sm">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-brand-600 animate-pulse"></i>
                         <span>Biotechnology For Child Nutrition in Rwanda</span>
                     </div>
-                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                        Ending Child Stunting Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">Bio-Innovation</span>
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.1]">
+                        Ending Child Stunting Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-600">Bio-Innovation</span>
                     </h1>
-                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                        The <span class="text-brand-400 font-semibold">Imikurire Project</span> by Nutrivira Ltd merges local agricultural wisdom with advanced nutritional science, delivering a nutrient-dense 18-ingredient flour blend to secure every child's future.
+                    <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl font-normal">
+                        The <span class="text-brand-600 font-semibold">Imikurire Project</span> by Nutrivira Ltd merges local agricultural wisdom with advanced nutritional science, delivering a nutrient-dense 18-ingredient flour blend to secure every child's future.
                     </p>
                     <div class="flex flex-wrap gap-4 pt-4">
-                        <a href="#ingredients" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold transition flex items-center gap-2 shadow-lg shadow-brand-600/30">
+                        <a href="#ingredients" class="px-7 py-4 rounded-2xl bg-brand-600 hover:bg-brand-700 text-white font-bold transition flex items-center gap-2.5 shadow-xl shadow-brand-600/25 hover:scale-[1.02]">
                             <span>Explore 18 Ingredients</span>
                             <i data-lucide="arrow-right" class="w-4 h-4"></i>
                         </a>
-                        <a href="#funding" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold border border-slate-700 transition flex items-center gap-2">
-                            <i data-lucide="lock" class="w-4 h-4 text-brand-400"></i>
+                        <a href="#funding" class="px-7 py-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-800 font-semibold border border-slate-200 transition flex items-center gap-2.5 shadow-md">
+                            <i data-lucide="lock" class="w-4 h-4 text-brand-600"></i>
                             <span>Institutional Funding</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5">
-                    <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-6">
-                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-500/20 rounded-full blur-3xl"></div>
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-200 shadow-2xl glass-panel p-6 sm:p-8 glow-effect">
+                        <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-100 rounded-full blur-3xl pointer-events-none"></div>
                         <div class="relative space-y-6">
-                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 font-bold text-xl">
-                                        👶
-                                    </div>
-                                    <div>
-                                        <div class="font-bold text-white">Nutrivira Research Hub</div>
-                                        <div class="text-xs text-slate-400">Kigali, Rwanda</div>
-                                    </div>
+                            <div class="flex items-center justify-between border-b border-slate-200 pb-5">
+                                <div class="flex items-center gap-3.5">
+                                <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-brand-600 to-emerald-400 text-white font-black text-2xl flex items-center justify-center shadow-lg shadow-brand-500/20">
+                                    🌱
                                 </div>
-                                <span class="px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold rounded-full">Active Initiative</span>
+                                <div>
+                                    <div class="font-bold text-slate-900 text-base">Nutrivira Research Hub</div>
+                                    <div class="text-xs text-brand-600 font-medium">Nutrivira Ltd 2026, Masoro, Kigali</div>
+                                    <a href="https://nutrivira.github.io/imikurire-website/" target="_blank" rel="noopener noreferrer" class="text-[11px] text-slate-500 hover:text-brand-600 underline block mt-0.5">nutrivira.github.io/imikurire-website/</a>
+                                </div>
+                            </div>
+                            <span class="px-3.5 py-1.5 bg-brand-100 text-brand-700 border border-brand-200 text-xs font-bold rounded-full">Active Hub</span>
                             </div>
 
                             <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-brand-400">18</div>
-                                    <div class="text-xs text-slate-400 mt-1">Bio-Fortified Ingredients</div>
+                                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                    <div class="text-3xl font-extrabold text-brand-600 font-heading">18</div>
+                                    <div class="text-xs text-slate-500 font-medium mt-1">Bio-Fortified Ingredients</div>
                                 </div>
-                                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
-                                    <div class="text-2xl font-extrabold text-emerald-400">100%</div>
-                                    <div class="text-xs text-slate-400 mt-1">Natural & Organic</div>
+                                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+                                    <div class="text-3xl font-extrabold text-emerald-600 font-heading">100%</div>
+                                    <div class="text-xs text-slate-500 font-medium mt-1">Natural & Organic</div>
                                 </div>
                             </div>
 
-                            <div class="p-4 rounded-xl bg-brand-950/30 border border-brand-800/40 text-sm text-brand-200">
-                                <span class="font-semibold text-brand-400">Project Mission:</span> Formulating scientifically tested infant flour to combat childhood malnutrition and promote healthy cognitive development.
+                            <div class="p-4 rounded-2xl bg-brand-50 border border-brand-200 text-xs sm:text-sm text-brand-900 leading-relaxed">
+                                <span class="font-bold text-brand-700 block mb-1">Project Mission:</span> Formulating scientifically tested infant flour to combat childhood malnutrition and promote healthy cognitive development.
                             </div>
                         </div>
                     </div>
@@ -163,43 +186,104 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+    <!-- Interactive Growth Tracker & Biomarker Section -->
+    <section id="tracker" class="py-24 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Scientific Approach to Child Growth</h2>
-                <p class="text-slate-400 text-base sm:text-lg">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold border border-brand-200">
+                    <i data-lucide="activity" class="w-4 h-4 text-brand-600"></i>
+                    <span>Clinical Metrics & Simulation</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Child Growth & Health Indicator Simulator</h2>
+                <p class="text-slate-600 text-base">
+                    Simulate how nutrient bio-fortification and gut health recovery correlate with optimal growth metrics during the critical first 1,000 days.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-xl max-w-5xl mx-auto space-y-8">
+                <!-- Controls -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Child Age (Months)</label>
+                        <input type="number" id="ageInput" min="6" max="36" value="18" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3 text-slate-900 text-sm font-semibold focus:outline-none focus:border-brand-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Weight (kg)</label>
+                        <input type="number" id="weightInput" step="0.1" value="10.2" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3 text-slate-900 text-sm font-semibold focus:outline-none focus:border-brand-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Diet Regime</label>
+                        <select id="dietInput" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3 text-slate-900 text-sm font-semibold focus:outline-none focus:border-brand-600">
+                            <option value="standard">Standard Unfortified</option>
+                            <option value="imikurire" selected>Imikurire Bio-Fortified (18 Ingredients)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Outputs -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="bg-brand-50/60 p-6 rounded-2xl border border-brand-200 text-center space-y-1">
+                        <span class="text-xs text-slate-500 font-semibold block uppercase">HAZ (Height-for-Age Z-Score)</span>
+                        <span id="hazScore" class="text-3xl font-extrabold text-brand-700 font-heading">+0.4 Z</span>
+                        <span id="hazStatus" class="text-xs text-brand-600 font-bold block">Optimal Growth</span>
+                    </div>
+                    <div class="bg-emerald-50/60 p-6 rounded-2xl border border-emerald-200 text-center space-y-1">
+                        <span class="text-xs text-slate-500 font-semibold block uppercase">Est. Fecal Calprotectin</span>
+                        <span id="calScore" class="text-3xl font-extrabold text-emerald-700 font-heading">38 µg/g</span>
+                        <span id="calStatus" class="text-xs text-emerald-600 font-bold block">Normal / Low Inflammation</span>
+                    </div>
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 text-center space-y-1">
+                        <span class="text-xs text-slate-500 font-semibold block uppercase">Nutrient Bioavailability</span>
+                        <span id="bioScore" class="text-3xl font-extrabold text-slate-900 font-heading">88%</span>
+                        <span id="bioStatus" class="text-xs text-slate-600 font-bold block">High Absorption</span>
+                    </div>
+                </div>
+
+                <!-- Chart Canvas -->
+                <div class="h-64 w-full bg-slate-50 rounded-2xl p-4 border border-slate-200">
+                    <canvas id="trackerChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Scientific Approach to Child Growth</h2>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed">
                     Malnutrition in early childhood leads to irreversible developmental delays. Imikurire provides a balanced, highly digestible macro and micronutrient profile derived entirely from locally available organic produce.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                <div class="bg-slate-50 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 shadow-lg space-y-4 hover:border-brand-300 transition duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-2xl border border-brand-200">
                         🧬
                     </div>
-                    <h3 class="text-xl font-bold text-white">Bio-Fortification</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-slate-900">Bio-Fortification</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
                         Enhancing nutrient bioavailability through controlled roasting, germinating, and precise proportioning of plant proteins and essential minerals.
                     </p>
                 </div>
 
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                <div class="bg-slate-50 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 shadow-lg space-y-4 hover:border-brand-300 transition duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-2xl border border-brand-200">
                         🌾
                     </div>
-                    <h3 class="text-xl font-bold text-white">Local Supply Chain</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-slate-900">Local Supply Chain</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
                         Sourced directly from Rwandan farmers, empowering local agricultural cooperatives while maintaining rigorous quality control standards.
                     </p>
                 </div>
 
-                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
-                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                <div class="bg-slate-50 backdrop-blur-xl p-8 rounded-3xl border border-slate-200 shadow-lg space-y-4 hover:border-brand-300 transition duration-300">
+                    <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-2xl border border-brand-200">
                         📈
                     </div>
-                    <h3 class="text-xl font-bold text-white">Measurable Impact</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-slate-900">Measurable Impact</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
                         Designed to meet WHO complementary feeding guidelines, targeting reduced stunting rates across rural and urban communities.
                     </p>
                 </div>
@@ -208,125 +292,275 @@
     </section>
 
     <!-- 18 Ingredients Section -->
-    <section id="ingredients" class="py-20 bg-slate-950">
+    <section id="ingredients" class="py-24 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-semibold">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-bold border border-brand-200">
                     <span>Proprietary Blend</span>
                 </div>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The 18 Bio-Fortified Ingredients</h2>
-                <p class="text-slate-400 text-base">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">The 18 Bio-Fortified Ingredients</h2>
+                <p class="text-slate-600 text-base">
                     Click any ingredient below to inspect its nutritional benefits and contribution to the Imikurire porridge formula.
                 </p>
             </div>
 
-            <div id="ingredients-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            <div id="ingredients-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
                 <!-- Populated via JavaScript -->
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+    <section id="products" class="py-24 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Flagship Porridge Formulations</h2>
-                <p class="text-slate-400 text-base">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Flagship Porridge Formulations</h2>
+                <p class="text-slate-600 text-base">
                     Ready-to-cook and pre-cooked blends optimized for infant weaning and toddler growth support.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl flex flex-col">
-                    <div class="h-56 bg-slate-800 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80" alt="Imikurire Classic Infant Blend" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full">Standard Formula</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-xl flex flex-col hover:border-brand-300 transition duration-300">
+                    <div class="h-64 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=800&auto=format&fit=crop&q=80" alt="Imikurire Classic Infant Blend" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-brand-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md">Standard Formula</div>
                     </div>
-                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                    <div class="p-8 space-y-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Imikurire Classic Infant Blend (6-24M)</h3>
-                            <p class="text-slate-400 text-sm">
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Imikurire Classic Infant Blend (6-24M)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
                                 Perfectly balanced cereal-legume blend providing high biological value protein, iron, zinc, and essential vitamins.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                            <span>Certified Organic</span>
-                            <span class="text-brand-400 font-semibold">Nutrivira Standard</span>
+                        <div class="pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                            <span class="font-medium">Certified Organic Formulation</span>
+                            <span class="text-brand-600 font-bold">Nutrivira Standard</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl flex flex-col">
-                    <div class="h-56 bg-slate-800 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80" alt="Imikurire Super-Grain Power Blend" class="w-full h-full object-cover">
-                        <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Advanced Formula</div>
+                <div class="bg-slate-50 rounded-3xl border border-slate-200 overflow-hidden shadow-xl flex flex-col hover:border-brand-300 transition duration-300">
+                    <div class="h-64 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop&q=80" alt="Imikurire Super-Grain Power Blend" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full shadow-md">Advanced Formula</div>
                     </div>
-                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                    <div class="p-8 space-y-5 flex-1 flex flex-col justify-between">
                         <div>
-                            <h3 class="text-xl font-bold text-white mb-2">Imikurire Super-Grain Power Blend (2-5Y)</h3>
-                            <p class="text-slate-400 text-sm">
+                            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-2">Imikurire Super-Grain Power Blend (2-5Y)</h3>
+                            <p class="text-slate-600 text-sm leading-relaxed">
                                 Enhanced with sprouted millet, sorghum, amaranth, and nutrient-dense seeds for sustained energy and cognitive development.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                            <span>High Fiber & Protein</span>
-                            <span class="text-brand-400 font-semibold">Nutrivira Advanced</span>
+                        <div class="pt-5 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                            <span class="font-medium">High Fiber & Bio-Protein</span>
+                            <span class="text-brand-600 font-bold">Nutrivira Advanced</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team Section -->
+    <section id="team" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Leadership & Scientific Team</h2>
+                <p class="text-slate-600 text-base">
+                    Dedicated co-founders driving agricultural biotechnology and infant nutrition innovation in Rwanda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Princia -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">👩‍💼</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Princia Bella Arakaza</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Managing Director</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Princia holds a Bachelor’s degree in Entrepreneurial Leadership from African Leadership University and brings experience in public health research, community outreach, stakeholder engagement, youth leadership, data collection, and program implementation. Through roles at Health Development Initiative, ALU School of Health, OEPESD TABARA, and Save the Children, she leads strategic direction, stakeholder coordination, public health activities, pilot implementation, and organizational development.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">ALU Graduate / Public Health & Leadership</div>
+                </div>
+
+                <!-- 2. Abdoul Aziz -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">👨‍💻</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Abdoul Aziz Irakoze</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Chief Operations Officer (COO)</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Aziz is an African social impact practitioner with experience in community development, field research, community mobilization, project coordination, event management, and program implementation. Through ALU Enterprise Innovation Program, Pro-Femmes/TWESE HAMWE’s EDUFAM project, and Raise Them Foundation, he leads operational coordination, partnerships, community engagement, and implementation activities.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Social Impact Practitioner & Operations Lead</div>
+                </div>
+
+                <!-- 3. Elie -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">👨‍⚕️</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Elie Habiyambere</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Head of Product Development & Innovation</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Elie is an MGHD student in the One Health track at UGHE with a background in Medicine and experience in nutrition, gastrointestinal health, and malnutrition-focused initiatives (such as a Kitchen Garden project in Rusasa Sector). He contributes medical, nutrition, research, and One Health expertise to IMIKURIRE's product development and innovation.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">UGHE / One Health & Medicine</div>
+                </div>
+
+                <!-- 4. Magnifique -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">🔬</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Magnifique Nyabagabo</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Head of Food Science, Quality Assurance & Regulatory Compliance</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Magnifique is a Biomedical Laboratory Scientist from the University of Rwanda with practical experience at CHUK and Byumba Level Two Teaching Hospital. Expertise includes bio-analytical testing, sample processing protocols, point-of-care screening, and laboratory procedures supporting product testing, quality assurance, safety, and regulatory compliance.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">University of Rwanda / Biomedical Lab Science</div>
+                </div>
+
+                <!-- 5. Emilienne -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">👩‍🏫</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Emilienne Ndayongeje</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Head of Research & Impact</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Emilienne holds a Bachelor’s degree in Entrepreneurial Leadership from ALU and practical experience in child nutrition, early community engagement, and data-informed decision-making. At ECD Uruyange in Kimironko, she supported caregivers on balanced diets and child development, strengthening her role in research, evidence generation, monitoring, and impact assessment.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">ALU Graduate / Child Nutrition & ECD</div>
+                </div>
+
+                <!-- 6. Raissa -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">📊</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Raissa Mpawenayo</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Head of Finance & Administration</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Raissa is an entrepreneurial and business professional with experience in finance, administration, business operations, data, and community development. Her work at Zanda Initiative, Raise Them Foundation, Vanguard Economics, and Agahozo-Shalom Youth Village strengthened her financial management, budgeting, reporting, and business planning capabilities.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">Finance, Business Ops & Administration</div>
+                </div>
+
+                <!-- 7. Loue Sauveur Christian -->
+                <div class="bg-white backdrop-blur-xl p-8 rounded-3xl border border-slate-200 text-center space-y-4 hover:border-brand-300 transition duration-300 shadow-lg flex flex-col justify-between lg:col-span-3 max-w-xl mx-auto w-full">
+                    <div>
+                        <div class="w-24 h-24 mx-auto rounded-full bg-gradient-to-tr from-brand-600 to-emerald-400 p-1 shadow-md mb-4">
+                            <div class="w-full h-full rounded-full bg-slate-100 flex items-center justify-center text-3xl">💻</div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Loue Sauveur Christian</h3>
+                        <div class="text-xs text-brand-600 font-bold mt-1 uppercase tracking-wider">Co-Founder & Technology & Digital Systems Lead</div>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mt-4 text-left">
+                            Loue is a Software Engineering graduate from African Leadership University with experience in software development, technology innovation, and entrepreneurship. He brings technical skills in developing practical technology-based solutions to community challenges in Rwanda and Africa, leading technology and digital systems supporting data management and growth.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-[11px] text-slate-400 font-medium">ALU Software Engineering Graduate</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Roadmap Section -->
-    <section id="roadmap" class="py-20 bg-slate-950">
+    <section id="roadmap" class="py-24 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Implementation Roadmap</h2>
-                <p class="text-slate-400 text-base">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Implementation Roadmap</h2>
+                <p class="text-slate-600 text-base">
                     Our strategic trajectory for scaling production and community outreach across Rwanda.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
-                    <div class="text-brand-400 font-bold text-sm">Phase 01</div>
-                    <h3 class="text-lg font-bold text-white">Formulation & Lab Testing</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Nutritional assay and formulation of the 18-ingredient bio-fortified blend.</p>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4 shadow-sm hover:border-brand-300 transition">
+                    <div class="text-brand-600 font-extrabold text-xs tracking-wider uppercase">Phase 01</div>
+                    <h3 class="text-lg font-bold text-slate-900">Formulation & Lab Testing</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Nutritional assay and formulation of the 18-ingredient bio-fortified blend.</p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
-                    <div class="text-brand-400 font-bold text-sm">Phase 02</div>
-                    <h3 class="text-lg font-bold text-white">Farmer Cooperatives</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Establishing direct ethical sourcing channels with local Rwandan agricultural groups.</p>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4 shadow-sm hover:border-brand-300 transition">
+                    <div class="text-brand-600 font-extrabold text-xs tracking-wider uppercase">Phase 02</div>
+                    <h3 class="text-lg font-bold text-slate-900">Farmer Cooperatives</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Establishing direct ethical sourcing channels with local Rwandan agricultural groups.</p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
-                    <div class="text-brand-400 font-bold text-sm">Phase 03</div>
-                    <h3 class="text-lg font-bold text-white">Pilot Distribution</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Community health center trials and maternal nutrition education workshops.</p>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4 shadow-sm hover:border-brand-300 transition">
+                    <div class="text-brand-600 font-extrabold text-xs tracking-wider uppercase">Phase 03</div>
+                    <h3 class="text-lg font-bold text-slate-900">Pilot Distribution</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Community health center trials and maternal nutrition education workshops.</p>
                 </div>
-                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
-                    <div class="text-brand-400 font-bold text-sm">Phase 04</div>
-                    <h3 class="text-lg font-bold text-white">National Scaling</h3>
-                    <p class="text-xs text-slate-400 leading-relaxed">Nationwide retail rollout and institutional partnerships with health ministries.</p>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4 shadow-sm hover:border-brand-300 transition">
+                    <div class="text-brand-600 font-extrabold text-xs tracking-wider uppercase">Phase 04</div>
+                    <h3 class="text-lg font-bold text-slate-900">National Scaling</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Nationwide retail rollout and institutional partnerships with health ministries.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Open Communication Call to Action Banner -->
+    <section class="py-16 bg-gradient-to-r from-emerald-900 via-slate-900 to-brand-900 text-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+                <i data-lucide="headphones" class="w-3.5 h-3.5"></i>
+                <span>Direct Open Communication</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Connect Instantly With Our Team</h2>
+            <p class="text-slate-200 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                Have questions about our bio-fortified ingredients, institutional funding, or clinical partnerships? Reach out to us directly through any channel below:
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/250787721205?text=Hello%20Imikurire%20Project%20Team" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition shadow-xl shadow-emerald-600/30 flex items-center gap-2.5">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    <span>WhatsApp: +250 787 721 205</span>
+                </a>
+                <!-- Email Button -->
+                <a href="mailto:nutrivira730@gmail.com" class="px-7 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition shadow-xl flex items-center gap-2.5">
+                    <i data-lucide="mail" class="w-5 h-5 text-brand-400"></i>
+                    <span>nutrivira730@gmail.com</span>
+                </a>
+                <!-- Phone Call Button -->
+                <a href="tel:+250787721205" class="px-7 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition shadow-xl flex items-center gap-2.5">
+                    <i data-lucide="phone" class="w-5 h-5 text-emerald-400"></i>
+                    <span>Call +250 787 721 205</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Institutional Funding & Secure Verification Portal -->
-    <section id="funding" class="py-20 bg-slate-900/60 border-t border-slate-800">
+    <section id="funding" class="py-24 bg-slate-50 border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-                <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 shadow-2xl relative overflow-hidden glow-effect">
+                <div class="absolute -right-20 -bottom-20 w-72 h-72 bg-brand-100 rounded-full blur-3xl pointer-events-none"></div>
                 
                 <div class="text-center max-w-2xl mx-auto space-y-4 mb-10">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold">
                         <i data-lucide="lock" class="w-3.5 h-3.5"></i>
                         <span>Secure Institutional Verification</span>
                     </div>
-                    <h2 class="text-3xl font-extrabold text-white">Institutional Funding & Grant Access</h2>
-                    <p class="text-slate-300 text-sm sm:text-base">
-                        To protect sensitive bank and mobile money accounts from automated scrapers, institutional funding credentials (Bank of Kigali & MTN MoMo under <span class="text-brand-400 font-semibold">Nyabagabo Magnifique</span>) require verified access.
+                    <h2 class="text-3xl font-extrabold text-slate-900">Institutional Funding & Grant Access</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        To protect sensitive bank and mobile money accounts from automated scrapers, institutional funding credentials (Bank of Kigali & MTN MoMo under <span class="text-brand-600 font-semibold">Nyabagabo Magnifique</span>) are strictly restricted. Once requested, an instant notification email is dispatched to <span class="font-bold text-slate-900">magnibmg@gmail.com</span> for instant review and approval in the Admin Portal.
                     </p>
                 </div>
 
@@ -334,21 +568,21 @@
                 <div id="access-form-container" class="space-y-6">
                     <form id="institution-access-form" class="space-y-4 max-w-lg mx-auto">
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Institution / Organization Name</label>
-                            <input type="text" id="inst-org-name" required placeholder="e.g. World Food Programme / Gates Foundation" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-500">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Institution / Organization Name</label>
+                            <input type="text" id="inst-org-name" required placeholder="e.g. World Food Programme / Gates Foundation" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3.5 text-slate-800 text-sm focus:outline-none focus:border-brand-600 shadow-inner">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Official Institutional Email</label>
-                            <input type="email" id="inst-org-email" required placeholder="name@organization.org" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-500">
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Official Institutional Email</label>
+                            <input type="email" id="inst-org-email" required placeholder="name@organization.org" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3.5 text-slate-800 text-sm focus:outline-none focus:border-brand-600 shadow-inner">
                         </div>
-                        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl text-sm transition shadow-xl shadow-brand-600/25 flex items-center justify-center gap-2.5">
                             <i data-lucide="send" class="w-4 h-4"></i>
-                            <span>Send Notification Email to Magnifique</span>
+                            <span>Request Access & Notify Magnifique (magnibmg@gmail.com)</span>
                         </button>
                     </form>
 
-                    <div class="text-center pt-4 border-t border-slate-800">
-                        <button onclick="openAdminModal()" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-brand-400 transition">
+                    <div class="text-center pt-6 border-t border-slate-200">
+                        <button onclick="openAdminModal()" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-brand-600 transition">
                             <i data-lucide="shield" class="w-3.5 h-3.5"></i>
                             <span>Magnifique Admin Portal (Passcode Required)</span>
                         </button>
@@ -357,31 +591,31 @@
 
                 <!-- Unlocked Account Details Container (Hidden by default unless approved) -->
                 <div id="unlocked-details-container" class="hidden space-y-6 pt-4">
-                    <div class="p-6 rounded-2xl bg-brand-950/40 border border-brand-500/30 text-center space-y-2">
-                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-500/20 text-brand-400 mb-2">
+                    <div class="p-6 rounded-2xl bg-brand-50 border border-brand-200 text-center space-y-2 shadow-inner">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-100 text-brand-700 mb-2">
                             <i data-lucide="check-circle" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white">Access Granted & Verified</h3>
-                        <p class="text-xs text-brand-300">You are viewing authorized official funding channels for the Imikurire Project.</p>
+                        <h3 class="text-xl font-bold text-slate-900">Access Granted & Verified</h3>
+                        <p class="text-xs text-brand-700">You are viewing authorized official funding channels for the Imikurire Project.</p>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Bank Account (Rwanda)</span>
-                                <span class="px-2.5 py-0.5 rounded bg-brand-500/20 text-brand-300 text-xs font-semibold">Bank of Kigali</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Bank Account (Rwanda)</span>
+                                <span class="px-2.5 py-0.5 rounded bg-brand-100 text-brand-700 text-xs font-semibold">Bank of Kigali</span>
                             </div>
-                            <div class="text-lg font-bold text-white font-mono tracking-wide">100218012118</div>
-                            <div class="text-xs text-slate-400">Account Name: <strong class="text-slate-200">Nyabagabo Magnifique</strong></div>
+                            <div class="text-lg font-bold text-slate-900 font-mono tracking-wide">100218012118</div>
+                            <div class="text-xs text-slate-500">Account Name: <strong class="text-slate-900">Nyabagabo Magnifique</strong></div>
                         </div>
 
-                        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3 shadow-sm">
                             <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Mobile Money (MoMo)</span>
-                                <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">MTN Rwanda</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Mobile Money (MoMo)</span>
+                                <span class="px-2.5 py-0.5 rounded bg-amber-100 text-amber-800 text-xs font-semibold">MTN Rwanda</span>
                             </div>
-                            <div class="text-lg font-bold text-white font-mono tracking-wide">+250 789 401 289</div>
-                            <div class="text-xs text-slate-400">Registered Name: <strong class="text-slate-200">Nyabagabo Magnifique</strong></div>
+                            <div class="text-lg font-bold text-slate-900 font-mono tracking-wide">+250 789 401 289</div>
+                            <div class="text-xs text-slate-500">Registered Name: <strong class="text-slate-900">Nyabagabo Magnifique</strong></div>
                         </div>
                     </div>
                 </div>
@@ -391,84 +625,99 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            <div class="space-y-3">
-                <div class="flex items-center gap-2 text-white font-bold text-lg">
-                    <span>🌱 Imikurire Project</span>
+    <footer class="bg-slate-900 text-slate-400 py-16 border-t border-slate-200 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2.5 text-white font-bold text-lg">
+                    <span class="w-8 h-8 rounded-xl bg-brand-600 flex items-center justify-center text-white font-bold">🌱</span>
+                    <span>Imikurire Project</span>
                 </div>
-                <p class="text-xs text-slate-500 leading-relaxed">
-                    A Nutrivira Ltd initiative dedicated to biotechnology, bio-fortification, and eradicating child malnutrition across Rwanda.
+                <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+                    A Nutrivira Ltd 2026 initiative dedicated to biotechnology, bio-fortification, and eradicating child malnutrition across Rwanda.
                 </p>
             </div>
             <div>
-                <div class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Quick Links</div>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#about" class="hover:text-brand-400 transition">About Initiative</a></li>
-                    <li><a href="#ingredients" class="hover:text-brand-400 transition">18 Bio Ingredients</a></li>
-                    <li><a href="#products" class="hover:text-brand-400 transition">Porridge Blends</a></li>
-                    <li><a href="#funding" class="hover:text-brand-400 transition">Institutional Funding</a></li>
+                <div class="font-bold text-white mb-4 text-xs uppercase tracking-wider">Quick Links</div>
+                <ul class="space-y-2.5 text-xs">
+                    <li><a href="#about" class="hover:text-white transition">About Initiative</a></li>
+                    <li><a href="#ingredients" class="hover:text-white transition">18 Bio Ingredients</a></li>
+                    <li><a href="#products" class="hover:text-white transition">Porridge Blends</a></li>
+                    <li><a href="#tracker" class="hover:text-white transition">Growth Tracker</a></li>
+                    <li><a href="#team" class="hover:text-white transition">Leadership Team</a></li>
+                    <li><a href="#funding" class="hover:text-white transition">Institutional Funding</a></li>
                 </ul>
             </div>
             <div>
-                <div class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Contact & Location</div>
-                <ul class="space-y-2 text-xs">
-                    <li class="flex items-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-500 shrink-0"></i>
-                        <span>Kigali Innovation Hub, Kigali, Rwanda</span>
+                <div class="font-bold text-white mb-4 text-xs uppercase tracking-wider">Contact & Location</div>
+                <ul class="space-y-3 text-xs">
+                    <li class="flex items-start gap-2.5">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+                        <span>Nutrivira Ltd 2026, Masoro, Kigali, Rwanda</span>
                     </li>
-                    <li class="flex items-center gap-2">
-                        <i data-lucide="mail" class="w-4 h-4 text-brand-500 shrink-0"></i>
-                        <span>magnibmg@gmail.com</span>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="globe" class="w-4 h-4 text-brand-400 shrink-0"></i>
+                        <a href="https://nutrivira.github.io/imikurire-website/" target="_blank" class="hover:text-white underline">nutrivira.github.io/imikurire-website/</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-400 shrink-0"></i>
+                        <span>nutrivira730@gmail.com</span>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <i data-lucide="phone" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                        <span>+250 787 721 205</span>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
-            &copy; 2026 Nutrivira Ltd / Imikurire Project. All rights reserved.
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+            &copy; 2026 Nutrivira Ltd / Imikurire Project. All rights reserved. <br>
+            <a href="https://nutrivira.github.io/imikurire-website/" target="_blank" class="text-brand-400 underline mt-1 inline-block">Imikurire Project | Nutrivira Ltd - Child Growth & Biotechnology Initiative</a>
         </div>
     </footer>
 
+    <!-- Chart.js CDN for Interactive Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- Ingredient Detail Modal -->
-    <div id="ingredient-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
-            <button onclick="closeIngredientModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+    <div id="ingredient-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <button onclick="closeIngredientModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 p-2">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
             <div class="flex items-center gap-4">
-                <img id="modal-img" src="" alt="Ingredient" class="w-20 h-20 rounded-2xl object-cover border border-slate-700">
+                <img id="modal-img" src="" alt="Ingredient" class="w-20 h-20 rounded-2xl object-cover border border-slate-200 shadow-lg">
                 <div>
-                    <span class="text-xs font-semibold text-brand-400 uppercase tracking-wider">Ingredient Profile</span>
-                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                    <span class="text-xs font-bold text-brand-600 uppercase tracking-wider">Ingredient Profile</span>
+                    <h3 id="modal-title" class="text-2xl font-bold text-slate-900 mt-1"></h3>
                 </div>
             </div>
-            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
-            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400 space-y-1">
-                <div class="font-semibold text-white">Nutritional Role in Imikurire Formula:</div>
-                <div id="modal-role"></div>
+            <p id="modal-desc" class="text-slate-600 text-sm leading-relaxed"></p>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-1.5 shadow-inner">
+                <div class="font-bold text-slate-900">Nutritional Role in Imikurire Formula:</div>
+                <div id="modal-role" class="leading-relaxed"></div>
             </div>
         </div>
     </div>
 
     <!-- Magnifique Admin Login Modal -->
-    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
-            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-slate-800 p-2">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <div class="text-center space-y-2">
-                <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center mx-auto">
-                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+            <div class="text-center space-y-3">
+                <div class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto border border-brand-200">
+                    <i data-lucide="shield-alert" class="w-7 h-7"></i>
                 </div>
-                <h3 class="text-2xl font-bold text-white">Magnifique Admin Portal</h3>
-                <p class="text-xs text-slate-400">Enter your secure passcode to review requests and manage approvals.</p>
+                <h3 class="text-2xl font-bold text-slate-900">Magnifique Admin Portal</h3>
+                <p class="text-xs text-slate-500 leading-relaxed">Enter your secure passcode (2299) to review requests and manage approvals.</p>
             </div>
             <div class="space-y-4">
                 <div>
-                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Secret Passcode</label>
-                    <input type="password" id="admin-passcode" placeholder="Enter PIN" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm text-center font-mono tracking-widest focus:outline-none focus:border-brand-500">
+                    <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Secret Passcode</label>
+                    <input type="password" id="admin-passcode" placeholder="Enter PIN" class="w-full bg-slate-50 border border-slate-300 rounded-2xl px-4 py-3.5 text-slate-900 text-sm text-center font-mono tracking-widest focus:outline-none focus:border-brand-600 shadow-inner">
                 </div>
-                <button onclick="verifyAdminPin()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+                <button onclick="verifyAdminPin()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl text-sm transition shadow-lg shadow-brand-600/25">
                     Access Admin Dashboard
                 </button>
             </div>
@@ -476,14 +725,14 @@
     </div>
 
     <!-- Admin Dashboard Modal -->
-    <div id="admin-dashboard" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative space-y-6 shadow-2xl">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+    <div id="admin-dashboard" class="fixed inset-0 z-50 hidden bg-slate-950/75 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-200 pb-5">
                 <div>
-                    <h3 class="text-2xl font-bold text-white">Institutional Access Requests</h3>
-                    <p class="text-xs text-slate-400">Review pending institutional requests and approve access to bank and MoMo details.</p>
+                    <h3 class="text-2xl font-bold text-slate-900">Institutional Access Requests</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Review pending institutional requests and approve access to bank and MoMo details.</p>
                 </div>
-                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white">
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-slate-800 p-2">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -494,14 +743,14 @@
     </div>
 
     <!-- Custom Notification Modal -->
-    <div id="custom-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-4 shadow-2xl">
-            <div id="custom-modal-icon" class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center mx-auto text-xl">
+    <div id="custom-modal" class="fixed inset-0 z-50 hidden bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-white border border-slate-200 rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-5 shadow-2xl">
+            <div id="custom-modal-icon" class="w-14 h-14 rounded-2xl bg-brand-50 text-brand-600 flex items-center justify-center mx-auto text-2xl border border-brand-200">
                 🌱
             </div>
-            <h3 id="custom-modal-title" class="text-xl font-bold text-white">Notice</h3>
-            <p id="custom-modal-msg" class="text-slate-300 text-sm whitespace-pre-line"></p>
-            <button onclick="document.getElementById('custom-modal').classList.add('hidden')" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+            <h3 id="custom-modal-title" class="text-xl font-bold text-slate-900">Notice</h3>
+            <p id="custom-modal-msg" class="text-slate-600 text-sm whitespace-pre-line leading-relaxed"></p>
+            <button onclick="document.getElementById('custom-modal').classList.add('hidden')" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl text-sm transition shadow-lg shadow-brand-600/25">
                 Okay
             </button>
         </div>
@@ -530,6 +779,8 @@
             { name: "Moringa Leaf Powder", role: "Powerhouse botanical providing iron, calcium, and multi-vitamins.", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&auto=format&fit=crop&q=80", desc: "Finely sifted moringa leaf powder for ultimate micronutrient fortification." }
         ];
 
+        let trackerChartInstance = null;
+
         document.addEventListener('DOMContentLoaded', function() {
             if(window.lucide) lucide.createIcons();
 
@@ -538,18 +789,26 @@
             let gridHtml = '';
             ingredients.forEach((ing, index) => {
                 gridHtml += `
-                    <div onclick="openIngredientModal(${index})" class="bg-slate-900 p-4 rounded-2xl border border-slate-800 hover:border-brand-500/50 cursor-pointer transition group flex flex-col items-center text-center space-y-3 shadow-lg">
-                        <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-800 relative">
-                            <img src="${ing.img}" alt="${ing.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.src='https://placehold.co/100x100/1e293b/22c55e?text=Bio'">
+                    <div onclick="openIngredientModal(${index})" class="bg-white backdrop-blur-xl p-5 rounded-3xl border border-slate-200 hover:border-brand-500/50 cursor-pointer transition duration-300 group flex flex-col items-center text-center space-y-3.5 shadow-lg hover:-translate-y-1">
+                        <div class="w-20 h-20 rounded-2xl overflow-hidden bg-slate-100 relative shadow-inner border border-slate-200">
+                            <img src="${ing.img}" alt="${ing.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" onerror="this.src='https://placehold.co/100x100/f1f5f9/16a34a?text=Bio'">
                         </div>
                         <div>
-                            <div class="text-xs font-bold text-brand-400">#${index + 1}</div>
-                            <h4 class="text-sm font-bold text-white mt-0.5 line-clamp-1">${ing.name}</h4>
+                            <div class="text-xs font-bold text-brand-600">#${index + 1}</div>
+                            <h4 class="text-sm font-bold text-slate-900 mt-1 line-clamp-1">${ing.name}</h4>
                         </div>
                     </div>
                 `;
             });
             grid.innerHTML = gridHtml;
+
+            // Initialize Growth Tracker Chart
+            initTrackerChart();
+
+            // Add event listeners for calculator inputs
+            document.getElementById('ageInput').addEventListener('input', updateTracker);
+            document.getElementById('weightInput').addEventListener('input', updateTracker);
+            document.getElementById('dietInput').addEventListener('change', updateTracker);
 
             // Check if already unlocked in session
             if(localStorage.getItem('imikurire_funding_unlocked') === 'true') {
@@ -563,7 +822,7 @@
                 menu.classList.toggle('hidden');
             });
 
-            // Handle Institution Form Submission
+            // Handle Institution Form Submission & Email Dispatch to magnibmg@gmail.com
             document.getElementById('institution-access-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 const orgName = document.getElementById('inst-org-name').value.trim();
@@ -589,7 +848,7 @@
                 // Dispatch direct mailto notification to magnibmg@gmail.com
                 const subject = encodeURIComponent("INSTITUTIONAL FUNDING ACCESS REQUEST: " + orgName);
                 const body = encodeURIComponent(
-                    `Hello Magnifique,\n\nA new institution has requested access to the Imikurire Project funding credentials:\n\n` +
+                    `Hello Magnifique,\n\nA new institution has requested access to the Imikurire Project funding credentials (Bank of Kigali & MTN MoMo):\n\n` +
                     `Organization: ${orgName}\n` +
                     `Email: ${orgEmail}\n` +
                     `Request ID: ${newReq.id}\n` +
@@ -600,13 +859,82 @@
                 window.location.href = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
 
                 showCustomModal("Request Logged & Email Dispatched", 
-                    `Thank you, ${orgName}. Your institutional access request has been sent to Magnifique (magnibmg@gmail.com).\n\n` +
+                    `Thank you, ${orgName}. Your institutional access request has been sent directly to Magnifique (magnibmg@gmail.com).\n\n` +
                     `Request ID: ${newReq.id}\nStatus: Pending Admin Approval.`
                 );
 
                 document.getElementById('institution-access-form').reset();
             });
         });
+
+        // Growth Tracker Simulation Logic
+        function initTrackerChart() {
+            const ctx = document.getElementById('trackerChart').getContext('2d');
+            trackerChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['6M', '12M', '18M', '24M', '30M', '36M'],
+                    datasets: [{
+                        label: 'HAZ Growth Trajectory',
+                        data: [-1.2, -0.6, 0.4, 0.9, 1.2, 1.5],
+                        borderColor: '#16a34a',
+                        backgroundColor: 'rgba(22, 163, 74, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { min: -2.5, max: 2.5, grid: { color: '#e2e8f0' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
+        function updateTracker() {
+            const age = parseFloat(document.getElementById('ageInput').value) || 18;
+            const weight = parseFloat(document.getElementById('weightInput').value) || 10.2;
+            const diet = document.getElementById('dietInput').value;
+
+            let haz = 0, cal = 40, bio = 85;
+
+            if(diet === 'imikurire') {
+                haz = Number((0.2 + (weight * 0.05) - (age * 0.01)).toFixed(1));
+                cal = Math.max(25, Math.round(55 - (weight * 1.2)));
+                bio = Math.min(96, Math.round(80 + (weight * 0.8)));
+            } else {
+                haz = Number((-0.8 + (weight * 0.03) - (age * 0.02)).toFixed(1));
+                cal = Math.round(95 + (weight * 2.1));
+                bio = Math.max(50, Math.round(65 + (weight * 0.4)));
+            }
+
+            document.getElementById('hazScore').textContent = (haz > 0 ? '+' : '') + haz + ' Z';
+            document.getElementById('calScore').textContent = cal + ' µg/g';
+            document.getElementById('bioScore').textContent = bio + '%';
+
+            document.getElementById('hazStatus').textContent = haz >= 0 ? 'Optimal Growth' : 'Moderate Risk';
+            document.getElementById('calStatus').textContent = cal <= 50 ? 'Normal / Low Inflammation' : 'Elevated Inflammation';
+            document.getElementById('bioStatus').textContent = bio >= 80 ? 'High Absorption' : 'Standard Absorption';
+
+            // Update chart data slightly based on inputs
+            if(trackerChartInstance) {
+                const multiplier = diet === 'imikurire' ? 1.2 : 0.6;
+                trackerChartInstance.data.datasets[0].data = [
+                    Number((-1.5 * multiplier).toFixed(1)),
+                    Number((-0.8 * multiplier).toFixed(1)),
+                    haz,
+                    Number((haz + 0.5 * multiplier).toFixed(1)),
+                    Number((haz + 0.8 * multiplier).toFixed(1)),
+                    Number((haz + 1.1 * multiplier).toFixed(1))
+                ];
+                trackerChartInstance.update();
+            }
+        }
 
         // Ingredient Modal Functions
         function openIngredientModal(index) {
@@ -664,26 +992,26 @@
             pendingRequests.forEach((req, index) => {
                 const isApproved = req.status === 'approved';
                 html += `
-                    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div class="bg-slate-50 p-6 rounded-3xl border border-slate-200 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 shadow-sm">
                         <div>
-                            <div class="font-bold text-white text-lg">${req.orgName}</div>
-                            <div class="text-sm text-slate-300">Email: <a href="mailto:${req.orgEmail}" class="text-brand-400 underline">${req.orgEmail}</a></div>
-                            <div class="text-xs text-slate-500 mt-1">Requested: ${req.date} | ID: ${req.id}</div>
-                            <div class="mt-2 inline-block px-2.5 py-0.5 rounded text-xs font-semibold ${isApproved ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}">
+                            <div class="font-bold text-slate-900 text-lg">${req.orgName}</div>
+                            <div class="text-sm text-slate-600 mt-1">Email: <a href="mailto:${req.orgEmail}" class="text-brand-600 underline">${req.orgEmail}</a></div>
+                            <div class="text-xs text-slate-500 mt-1.5">Requested: ${req.date} | ID: ${req.id}</div>
+                            <div class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-bold ${isApproved ? 'bg-brand-100 text-brand-700 border border-brand-200' : 'bg-amber-100 text-amber-800 border border-amber-200'}">
                                 ${isApproved ? 'APPROVED & UNLOCKED' : 'PENDING REVIEW'}
                             </div>
                         </div>
-                        <div class="flex items-center gap-2 w-full sm:w-auto">
+                        <div class="flex items-center gap-2.5 w-full sm:w-auto pt-2 sm:pt-0">
                             ${!isApproved ? `
-                                <button onclick="approveRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+                                <button onclick="approveRequest(${index})" class="flex-1 sm:flex-none px-5 py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-2xl text-sm transition shadow-lg shadow-brand-600/25">
                                     Approve & Unlock
                                 </button>
                             ` : `
-                                <button onclick="revokeRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl text-sm transition">
+                                <button onclick="revokeRequest(${index})" class="flex-1 sm:flex-none px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-2xl text-sm transition shadow-lg shadow-amber-600/25">
                                     Revoke Access
                                 </button>
                             `}
-                            <button onclick="deleteRequest(${index})" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-sm transition" title="Delete">
+                            <button onclick="deleteRequest(${index})" class="px-3.5 py-2.5 bg-slate-200 hover:bg-slate-300 text-slate-700 rounded-2xl text-sm transition" title="Delete">
                                 <i data-lucide="trash-2" class="w-4 h-4"></i>
                             </button>
                         </div>
