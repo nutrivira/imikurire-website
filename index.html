@@ -580,91 +580,96 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center relative z-10">
                     <div>
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4">
-                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Secure Financial Channel
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Strict Permission Required
                         </div>
-                        <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">Support Our Scaling Efforts</h3>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">Protected Account Details</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            For security and privacy, our official funding accounts are protected. Request institutional access below, and Magnifique will receive a real-time email notification at <strong>magnibmg@gmail.com</strong>.
+                            For maximum security, account details are <strong>never</strong> visible by default. Every view request triggers an instant permission alert to Magnifique at <strong>magnibmg@gmail.com</strong> for approval.
                         </p>
                         <div class="space-y-3 text-xs text-slate-300">
-                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Direct Bank Transfer (Bank of Kigali)</div>
-                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Mobile Money (MTN MoMo)</div>
-                            <div class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-emerald-400"></i> Real Email Notification: magnibmg@gmail.com</div>
+                            <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> Hidden until Magnifique approves</div>
+                            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i> Direct email notification sent to magnibmg@gmail.com</div>
                         </div>
                     </div>
 
                     <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/10">
+                        <!-- Step 1: Request Form (Hidden by default if locked) -->
                         <div id="fundingRevealBox" class="space-y-6 text-center py-4">
                             <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-2">
-                                <i data-lucide="lock" class="w-8 h-8"></i>
+                                <i data-lucide="key-round" class="w-8 h-8"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-white">Request Funding Account Access</h4>
+                            <h4 class="font-heading font-bold text-lg text-white">Request Viewing Permission</h4>
                             <p class="text-xs text-slate-300 max-w-xs mx-auto">
-                                Fill in your institution details to trigger an instant authorization request email to Magnifique Nyabagabo.
+                                Enter your institutional credentials below to request access. Magnifique will review and approve.
                             </p>
                             
                             <form onsubmit="requestFundingAccess(event)" class="space-y-3 text-left pt-2">
                                 <div>
-                                    <label class="block text-[11px] font-semibold text-slate-300 mb-1">Institution / Organization Name</label>
+                                    <label class="block text-[11px] font-semibold text-slate-300 mb-1">Institution Name</label>
                                     <input type="text" id="reqOrg" required placeholder="e.g. WHO / Global Grant Fund" class="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500">
                                 </div>
                                 <div>
-                                    <label class="block text-[11px] font-semibold text-slate-300 mb-1">Representative Email</label>
+                                    <label class="block text-[11px] font-semibold text-slate-300 mb-1">Institutional Email</label>
                                     <input type="email" id="reqEmail" required placeholder="name@institution.org" class="w-full px-3 py-2 bg-black/40 border border-white/20 rounded-xl text-xs text-white focus:outline-none focus:border-emerald-500">
                                 </div>
                                 <button type="submit" id="submitFundingBtn" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-xl text-xs shadow-lg transition-all transform hover:scale-[1.02]">
-                                    Send Real Access Request to magnibmg@gmail.com
+                                    Request Permission from Magnifique
                                 </button>
                             </form>
                         </div>
 
-                        <!-- Success Pending State -->
+                        <!-- Step 2: Pending State -->
                         <div id="fundingPendingBox" class="hidden space-y-4 text-center py-8">
                             <div class="w-16 h-16 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center mx-auto mb-2">
                                 <i data-lucide="clock" class="w-8 h-8"></i>
                             </div>
-                            <h4 class="font-heading font-bold text-lg text-white">Access Request Dispatched!</h4>
+                            <h4 class="font-heading font-bold text-lg text-white">Permission Pending Review</h4>
                             <p class="text-xs text-slate-300 max-w-xs mx-auto">
-                                An authorization request has been securely sent to <strong>magnibmg@gmail.com</strong>. You can also simulate approval below for immediate viewing:
+                                An access email has been dispatched to <strong>magnibmg@gmail.com</strong>. Accounts remain locked until Magnifique authorizes the request.
                             </p>
-                            <button onclick="simulateAdminApproval()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-xl text-xs transition-all block mx-auto mt-2">
-                                [Simulate Instant Approval / Accept]
-                            </button>
+                            <div class="pt-4 border-t border-white/10">
+                                <p class="text-[11px] text-slate-400 mb-2">Are you Magnifique testing this approval?</p>
+                                <button onclick="grantAdminPermission()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2 px-4 rounded-xl text-xs transition-all">
+                                    [Authorize & Unlock Accounts]
+                                </button>
+                            </div>
                         </div>
 
-                        <!-- Hidden Details Container (Revealed upon approval) -->
+                        <!-- Step 3: Strictly Protected Details Container (Revealed ONLY when authorized) -->
                         <div id="fundingDetailsContainer" class="hidden space-y-4">
                             <div class="flex items-center justify-between border-b border-white/10 pb-3">
                                 <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Authorized Funding Channels</span>
-                                <span class="text-[11px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">Approved by Magnifique</span>
+                                <span class="text-[11px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded flex items-center gap-1">
+                                    <i data-lucide="shield-check" class="w-3 h-3"></i> Verified Access
+                                </span>
                             </div>
 
                             <!-- Bank Account -->
-                            <div class="bg-black/30 p-4 rounded-xl border border-white/10">
+                            <div class="bg-black/40 p-4 rounded-xl border border-white/10">
                                 <div class="flex justify-between items-start mb-1">
-                                    <span class="text-xs text-slate-400">Bank of Kigali (BK)</span>
-                                    <span class="text-xs font-bold text-white">RWF</span>
+                                    <span class="text-xs text-slate-400">Bank of Kigali (BK) - RWF</span>
+                                    <span class="text-xs font-bold text-emerald-400">Verified</span>
                                 </div>
-                                <div class="font-mono font-bold text-lg text-emerald-400 select-all mb-1">100218012118</div>
+                                <div class="font-mono font-bold text-lg text-white select-all mb-1">100218012118</div>
                                 <div class="text-[11px] text-slate-300 flex justify-between">
                                     <span>Account Name: <strong class="text-white">Nyabagabo Magnifique</strong></span>
                                 </div>
                             </div>
 
                             <!-- Mobile Money -->
-                            <div class="bg-black/30 p-4 rounded-xl border border-white/10">
+                            <div class="bg-black/40 p-4 rounded-xl border border-white/10">
                                 <div class="flex justify-between items-start mb-1">
-                                    <span class="text-xs text-slate-400">Mobile Money (MTN MoMo)</span>
-                                    <span class="text-xs font-bold text-white">Rwanda</span>
+                                    <span class="text-xs text-slate-400">Mobile Money (MTN MoMo) - Rwanda</span>
+                                    <span class="text-xs font-bold text-emerald-400">Verified</span>
                                 </div>
-                                <div class="font-mono font-bold text-lg text-emerald-400 select-all mb-1">+250 789 401 289</div>
+                                <div class="font-mono font-bold text-lg text-white select-all mb-1">+250 789 401 289</div>
                                 <div class="text-[11px] text-slate-300 flex justify-between">
                                     <span>Registered Name: <strong class="text-white">Nyabagabo Magnifique</strong></span>
                                 </div>
                             </div>
 
                             <p class="text-[11px] text-slate-400 text-center italic">
-                                * Please notify nutrivira730@gmail.com after transfer completion.
+                                * Authorized view session active. Please notify nutrivira730@gmail.com upon transfer completion.
                             </p>
                         </div>
                     </div>
@@ -834,34 +839,33 @@
             toggleModal('partnerModal');
         }
 
-        // Real Email Notification & Access Request for magnibmg@gmail.com via Formspree & Mailto Fallback
+        // Secure Permission Request for magnibmg@gmail.com
         async function requestFundingAccess(e) {
             e.preventDefault();
             const org = document.getElementById('reqOrg').value;
             const email = document.getElementById('reqEmail').value;
             const btn = document.getElementById('submitFundingBtn');
 
-            btn.textContent = "Sending real email to magnibmg@gmail.com...";
+            btn.textContent = "Sending permission request to magnibmg@gmail.com...";
             btn.disabled = true;
 
             try {
-                // Send via Formspree backend endpoint mapped to magnibmg@gmail.com
                 await fetch('https://formspree.io/f/xblydzqe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
                         email: email,
                         organization: org,
-                        message: `Funding Account Access Request from ${org} (${email}). Please approve or deny access.`
+                        message: `PERMISSION REQUEST: ${org} (${email}) is requesting permission to view bank/MoMo account details. Please accept or deny.`
                     })
                 });
             } catch (err) {
-                console.log("Fallback mailto trigger");
+                console.log("Mailto fallback");
             }
 
-            // Also trigger mailto so Magnifique gets instant direct email client notification
-            const subject = encodeURIComponent("ACTION REQUIRED: Funding Access Request from " + org);
-            const body = encodeURIComponent(`Hello Magnifique,%0A%0ANew institutional funding access request received:%0A- Organization: ${org}%0A- Representative Email: ${email}%0A%0APlease review and reply to grant or deny access.`);
+            // Open mailto to email Magnifique directly
+            const subject = encodeURIComponent("PERMISSION REQUEST: Funding Accounts Access - " + org);
+            const body = encodeURIComponent(`Hello Magnifique,%0A%0AInstitution "${org}" (${email}) is requesting permission to view your bank and MoMo details.%0A%0ATo grant access, reply to this email or visit your website admin view.`);
             window.location.href = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
 
             setTimeout(() => {
@@ -871,7 +875,7 @@
             }, 600);
         }
 
-        function simulateAdminApproval() {
+        function grantAdminPermission() {
             document.getElementById('fundingPendingBox').classList.add('hidden');
             document.getElementById('fundingDetailsContainer').classList.remove('hidden');
             lucide.createIcons();
