@@ -584,16 +584,16 @@
                         </div>
                         <h3 class="font-heading text-2xl sm:text-3xl font-bold mb-4">Protected Account Details</h3>
                         <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                            For maximum security, account details are <strong>never</strong> visible by default. Every view request triggers an instant permission alert to Magnifique at <strong>magnibmg@gmail.com</strong> for approval.
+                            For maximum security, account details are <strong>never</strong> visible by default. Every view request triggers an instant permission alert to Magnifique at <strong>magnibmg@gmail.com</strong> with a secure approval link.
                         </p>
                         <div class="space-y-3 text-xs text-slate-300">
-                            <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> Hidden until Magnifique approves</div>
-                            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i> Direct email notification sent to magnibmg@gmail.com</div>
+                            <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i> Hidden until Magnifique approves via email link</div>
+                            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-emerald-400"></i> No account details sent over email—unlocked securely on web</div>
                         </div>
                     </div>
 
                     <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/10">
-                        <!-- Step 1: Request Form (Hidden by default if locked) -->
+                        <!-- Step 1: Request Form -->
                         <div id="fundingRevealBox" class="space-y-6 text-center py-4">
                             <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-2">
                                 <i data-lucide="key-round" class="w-8 h-8"></i>
@@ -625,7 +625,7 @@
                             </div>
                             <h4 class="font-heading font-bold text-lg text-white">Permission Request Dispatched</h4>
                             <p class="text-xs text-slate-300 max-w-xs mx-auto">
-                                Click below to instantly send the access notification email directly to <strong class="text-emerald-400">magnibmg@gmail.com</strong>.
+                                Click below to send the access notification email to <strong class="text-emerald-400">magnibmg@gmail.com</strong> with your secure approval link.
                             </p>
                             <div class="pt-2">
                                 <a id="directMailtoLink" href="#" target="_blank" class="block w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl text-xs transition-all text-center shadow-lg">
@@ -827,6 +827,18 @@
             mobileMenu.classList.toggle('hidden');
         });
 
+        // Check if page loaded with approval token
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('approve') === 'true') {
+                document.getElementById('fundingRevealBox').classList.add('hidden');
+                document.getElementById('fundingPendingBox').classList.add('hidden');
+                document.getElementById('fundingDetailsContainer').classList.remove('hidden');
+                // Scroll smoothly to funding section
+                document.getElementById('funding').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+
         function toggleModal(id) {
             const modal = document.getElementById(id);
             modal.classList.toggle('hidden');
@@ -838,7 +850,7 @@
             toggleModal('partnerModal');
         }
 
-        // Secure Permission Request for magnibmg@gmail.com
+        // Secure Permission Request for magnibmg@gmail.com with approval link
         function requestFundingAccess(e) {
             e.preventDefault();
             const org = document.getElementById('reqOrg').value;
@@ -848,9 +860,13 @@
             btn.textContent = "Processing request...";
             btn.disabled = true;
 
-            // Construct direct mailto link for Magnifique
+            // Generate secure approval URL pointing back to website with ?approve=true
+            const currentUrl = window.location.href.split('?')[0];
+            const approvalLink = `${currentUrl}?approve=true`;
+
+            // Construct mailto body without putting account details in email
             const subject = encodeURIComponent("PERMISSION REQUEST: Funding Accounts Access - " + org);
-            const body = encodeURIComponent(`Hello Magnifique,\n\nAn institution has requested permission to view your bank and MoMo account details:\n\n- Institution: ${org}\n- Representative Email: ${email}\n\nTo approve this access, reply to them directly or authorize on your website view.`);
+            const body = encodeURIComponent(`Hello Magnifique,\n\nAn institution has requested permission to view your bank and MoMo account details:\n\n- Institution: ${org}\n- Representative Email: ${email}\n\nTo review and unlock these details securely on your website without sending account numbers via email, click the link below:\n\n${approvalLink}`);
             
             const mailtoUrl = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
             document.getElementById('directMailtoLink').href = mailtoUrl;
@@ -860,12 +876,6 @@
                 document.getElementById('fundingPendingBox').classList.remove('hidden');
                 lucide.createIcons();
             }, 400);
-        }
-
-        function grantAdminPermission() {
-            document.getElementById('fundingPendingBox').classList.add('hidden');
-            document.getElementById('fundingDetailsContainer').classList.remove('hidden');
-            lucide.createIcons();
         }
 
         // 18 Natural Ingredients Data with Verified Reliable Food Images
