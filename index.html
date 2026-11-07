@@ -1,4 +1,569 @@
- <!-- ... existing code ... -->
+ <!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imikurire Project | Nutrivira Ltd - Child Growth & Biotechnology Initiative</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            900: '#14532d',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-brand-700 via-emerald-600 to-brand-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-sm">
+        🌱 <span class="font-bold">Nutrivira Ltd Initiative:</span> Pioneering Biotechnology & Local Bio-Fortified Porridge to Eradicate Child Stunting in Rwanda.
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center text-slate-950 font-bold text-xl shadow-lg shadow-brand-500/30">
+                    🌱
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-white">IMIKURIRE</span>
+                    <span class="text-xs text-brand-400 block font-semibold">Nutrivira Ltd Initiative</span>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-brand-400 transition">About</a>
+                <a href="#ingredients" class="hover:text-brand-400 transition">18 Ingredients</a>
+                <a href="#products" class="hover:text-brand-400 transition">Products</a>
+                <a href="#roadmap" class="hover:text-brand-400 transition">Roadmap</a>
+                <a href="#funding" class="hover:text-brand-400 transition text-brand-400 font-semibold">Institutional Funding</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="#funding" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition shadow-lg shadow-brand-600/20">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>Partner Portal</span>
+                </a>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-3">
+            <a href="#about" class="block text-slate-300 hover:text-brand-400 py-1">About</a>
+            <a href="#ingredients" class="block text-slate-300 hover:text-brand-400 py-1">18 Ingredients</a>
+            <a href="#products" class="block text-slate-300 hover:text-brand-400 py-1">Products</a>
+            <a href="#roadmap" class="block text-slate-300 hover:text-brand-400 py-1">Roadmap</a>
+            <a href="#funding" class="block text-brand-400 font-semibold py-1">Institutional Funding</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-28 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#22c55e_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/25 text-brand-400 text-xs sm:text-sm font-semibold tracking-wide">
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                        <span>Biotechnology For Child Nutrition in Rwanda</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Ending Child Stunting Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-300">Bio-Innovation</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+                        The <span class="text-brand-400 font-semibold">Imikurire Project</span> by Nutrivira Ltd merges local agricultural wisdom with advanced nutritional science, delivering a nutrient-dense 18-ingredient flour blend to secure every child's future.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="#ingredients" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-slate-950 font-bold transition flex items-center gap-2 shadow-lg shadow-brand-600/30">
+                            <span>Explore 18 Ingredients</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#funding" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold border border-slate-700 transition flex items-center gap-2">
+                            <i data-lucide="lock" class="w-4 h-4 text-brand-400"></i>
+                            <span>Institutional Funding</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl overflow-hidden border border-slate-800 shadow-2xl bg-slate-900 p-6">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-brand-500/20 rounded-full blur-3xl"></div>
+                        <div class="relative space-y-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-12 h-12 rounded-2xl bg-brand-500/20 flex items-center justify-center text-brand-400 font-bold text-xl">
+                                        👶
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-white">Nutrivira Research Hub</div>
+                                        <div class="text-xs text-slate-400">Kigali, Rwanda</div>
+                                    </div>
+                                </div>
+                                <span class="px-3 py-1 bg-brand-500/10 text-brand-400 border border-brand-500/20 text-xs font-semibold rounded-full">Active Initiative</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="text-2xl font-extrabold text-brand-400">18</div>
+                                    <div class="text-xs text-slate-400 mt-1">Bio-Fortified Ingredients</div>
+                                </div>
+                                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800">
+                                    <div class="text-2xl font-extrabold text-emerald-400">100%</div>
+                                    <div class="text-xs text-slate-400 mt-1">Natural & Organic</div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-brand-950/30 border border-brand-800/40 text-sm text-brand-200">
+                                <span class="font-semibold text-brand-400">Project Mission:</span> Formulating scientifically tested infant flour to combat childhood malnutrition and promote healthy cognitive development.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Scientific Approach to Child Growth</h2>
+                <p class="text-slate-400 text-base sm:text-lg">
+                    Malnutrition in early childhood leads to irreversible developmental delays. Imikurire provides a balanced, highly digestible macro and micronutrient profile derived entirely from locally available organic produce.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                        🧬
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Bio-Fortification</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Enhancing nutrient bioavailability through controlled roasting, germinating, and precise proportioning of plant proteins and essential minerals.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                        🌾
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Local Supply Chain</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Sourced directly from Rwandan farmers, empowering local agricultural cooperatives while maintaining rigorous quality control standards.
+                    </p>
+                </div>
+
+                <div class="bg-slate-900 p-8 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-xl">
+                        📈
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Measurable Impact</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Designed to meet WHO complementary feeding guidelines, targeting reduced stunting rates across rural and urban communities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18 Ingredients Section -->
+    <section id="ingredients" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-semibold">
+                    <span>Proprietary Blend</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">The 18 Bio-Fortified Ingredients</h2>
+                <p class="text-slate-400 text-base">
+                    Click any ingredient below to inspect its nutritional benefits and contribution to the Imikurire porridge formula.
+                </p>
+            </div>
+
+            <div id="ingredients-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Populated via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-slate-900/50 border-t border-slate-800/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Flagship Porridge Formulations</h2>
+                <p class="text-slate-400 text-base">
+                    Ready-to-cook and pre-cooked blends optimized for infant weaning and toddler growth support.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl flex flex-col">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80" alt="Imikurire Classic Infant Blend" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-brand-600 text-white text-xs font-bold px-3 py-1 rounded-full">Standard Formula</div>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Imikurire Classic Infant Blend (6-24M)</h3>
+                            <p class="text-slate-400 text-sm">
+                                Perfectly balanced cereal-legume blend providing high biological value protein, iron, zinc, and essential vitamins.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                            <span>Certified Organic</span>
+                            <span class="text-brand-400 font-semibold">Nutrivira Standard</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl flex flex-col">
+                    <div class="h-56 bg-slate-800 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop&q=80" alt="Imikurire Super-Grain Power Blend" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">Advanced Formula</div>
+                    </div>
+                    <div class="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Imikurire Super-Grain Power Blend (2-5Y)</h3>
+                            <p class="text-slate-400 text-sm">
+                                Enhanced with sprouted millet, sorghum, amaranth, and nutrient-dense seeds for sustained energy and cognitive development.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+                            <span>High Fiber & Protein</span>
+                            <span class="text-brand-400 font-semibold">Nutrivira Advanced</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section -->
+    <section id="roadmap" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Implementation Roadmap</h2>
+                <p class="text-slate-400 text-base">
+                    Our strategic trajectory for scaling production and community outreach across Rwanda.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="text-brand-400 font-bold text-sm">Phase 01</div>
+                    <h3 class="text-lg font-bold text-white">Formulation & Lab Testing</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Nutritional assay and formulation of the 18-ingredient bio-fortified blend.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="text-brand-400 font-bold text-sm">Phase 02</div>
+                    <h3 class="text-lg font-bold text-white">Farmer Cooperatives</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Establishing direct ethical sourcing channels with local Rwandan agricultural groups.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="text-brand-400 font-bold text-sm">Phase 03</div>
+                    <h3 class="text-lg font-bold text-white">Pilot Distribution</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Community health center trials and maternal nutrition education workshops.</p>
+                </div>
+                <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="text-brand-400 font-bold text-sm">Phase 04</div>
+                    <h3 class="text-lg font-bold text-white">National Scaling</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed">Nationwide retail rollout and institutional partnerships with health ministries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Institutional Funding & Secure Verification Portal -->
+    <section id="funding" class="py-20 bg-slate-900/60 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 rounded-3xl border border-slate-800 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
+                <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="text-center max-w-2xl mx-auto space-y-4 mb-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold">
+                        <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+                        <span>Secure Institutional Verification</span>
+                    </div>
+                    <h2 class="text-3xl font-extrabold text-white">Institutional Funding & Grant Access</h2>
+                    <p class="text-slate-300 text-sm sm:text-base">
+                        To protect sensitive bank and mobile money accounts from automated scrapers, institutional funding credentials (Bank of Kigali & MTN MoMo under <span class="text-brand-400 font-semibold">Nyabagabo Magnifique</span>) require verified access.
+                    </p>
+                </div>
+
+                <!-- Access Request Form -->
+                <div id="access-form-container" class="space-y-6">
+                    <form id="institution-access-form" class="space-y-4 max-w-lg mx-auto">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Institution / Organization Name</label>
+                            <input type="text" id="inst-org-name" required placeholder="e.g. World Food Programme / Gates Foundation" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Official Institutional Email</label>
+                            <input type="email" id="inst-org-email" required placeholder="name@organization.org" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+                        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-brand-600/30 flex items-center justify-center gap-2">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            <span>Send Notification Email to Magnifique</span>
+                        </button>
+                    </form>
+
+                    <div class="text-center pt-4 border-t border-slate-800">
+                        <button onclick="openAdminModal()" class="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-brand-400 transition">
+                            <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                            <span>Magnifique Admin Portal (Passcode Required)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Unlocked Account Details Container (Hidden by default unless approved) -->
+                <div id="unlocked-details-container" class="hidden space-y-6 pt-4">
+                    <div class="p-6 rounded-2xl bg-brand-950/40 border border-brand-500/30 text-center space-y-2">
+                        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand-500/20 text-brand-400 mb-2">
+                            <i data-lucide="check-circle" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Access Granted & Verified</h3>
+                        <p class="text-xs text-brand-300">You are viewing authorized official funding channels for the Imikurire Project.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Bank Account (Rwanda)</span>
+                                <span class="px-2.5 py-0.5 rounded bg-brand-500/20 text-brand-300 text-xs font-semibold">Bank of Kigali</span>
+                            </div>
+                            <div class="text-lg font-bold text-white font-mono tracking-wide">100218012118</div>
+                            <div class="text-xs text-slate-400">Account Name: <strong class="text-slate-200">Nyabagabo Magnifique</strong></div>
+                        </div>
+
+                        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Mobile Money (MoMo)</span>
+                                <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">MTN Rwanda</span>
+                            </div>
+                            <div class="text-lg font-bold text-white font-mono tracking-wide">+250 789 401 289</div>
+                            <div class="text-xs text-slate-400">Registered Name: <strong class="text-slate-200">Nyabagabo Magnifique</strong></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12 text-slate-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div class="space-y-3">
+                <div class="flex items-center gap-2 text-white font-bold text-lg">
+                    <span>🌱 Imikurire Project</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    A Nutrivira Ltd initiative dedicated to biotechnology, bio-fortification, and eradicating child malnutrition across Rwanda.
+                </p>
+            </div>
+            <div>
+                <div class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Quick Links</div>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#about" class="hover:text-brand-400 transition">About Initiative</a></li>
+                    <li><a href="#ingredients" class="hover:text-brand-400 transition">18 Bio Ingredients</a></li>
+                    <li><a href="#products" class="hover:text-brand-400 transition">Porridge Blends</a></li>
+                    <li><a href="#funding" class="hover:text-brand-400 transition">Institutional Funding</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="font-bold text-white mb-3 text-xs uppercase tracking-wider">Contact & Location</div>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                        <span>Kigali Innovation Hub, Kigali, Rwanda</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-brand-500 shrink-0"></i>
+                        <span>magnibmg@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-900 text-center text-xs text-slate-600">
+            &copy; 2026 Nutrivira Ltd / Imikurire Project. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Ingredient Detail Modal -->
+    <div id="ingredient-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <button onclick="closeIngredientModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="flex items-center gap-4">
+                <img id="modal-img" src="" alt="Ingredient" class="w-20 h-20 rounded-2xl object-cover border border-slate-700">
+                <div>
+                    <span class="text-xs font-semibold text-brand-400 uppercase tracking-wider">Ingredient Profile</span>
+                    <h3 id="modal-title" class="text-2xl font-bold text-white"></h3>
+                </div>
+            </div>
+            <p id="modal-desc" class="text-slate-300 text-sm leading-relaxed"></p>
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400 space-y-1">
+                <div class="font-semibold text-white">Nutritional Role in Imikurire Formula:</div>
+                <div id="modal-role"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Magnifique Admin Login Modal -->
+    <div id="admin-login-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <button onclick="closeAdminModal()" class="absolute top-6 right-6 text-slate-400 hover:text-white">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center mx-auto">
+                    <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white">Magnifique Admin Portal</h3>
+                <p class="text-xs text-slate-400">Enter your secure passcode to review requests and manage approvals.</p>
+            </div>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">Secret Passcode</label>
+                    <input type="password" id="admin-passcode" placeholder="Enter PIN" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm text-center font-mono tracking-widest focus:outline-none focus:border-brand-500">
+                </div>
+                <button onclick="verifyAdminPin()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+                    Access Admin Dashboard
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Modal -->
+    <div id="admin-dashboard" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 relative space-y-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div>
+                    <h3 class="text-2xl font-bold text-white">Institutional Access Requests</h3>
+                    <p class="text-xs text-slate-400">Review pending institutional requests and approve access to bank and MoMo details.</p>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            <div id="admin-requests-list" class="space-y-4">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Notification Modal -->
+    <div id="custom-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-md w-full p-6 sm:p-8 text-center space-y-4 shadow-2xl">
+            <div id="custom-modal-icon" class="w-12 h-12 rounded-2xl bg-brand-500/20 text-brand-400 flex items-center justify-center mx-auto text-xl">
+                🌱
+            </div>
+            <h3 id="custom-modal-title" class="text-xl font-bold text-white">Notice</h3>
+            <p id="custom-modal-msg" class="text-slate-300 text-sm whitespace-pre-line"></p>
+            <button onclick="document.getElementById('custom-modal').classList.add('hidden')" class="w-full py-3 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+                Okay
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // 18 Ingredients Data with Distinct, Accurate Food Photography Links
+        const ingredients = [
+            { name: "Maize (Corn)", role: "Provides carbohydrates and dietary fiber for sustained infant energy.", img: "https://images.unsplash.com/photo-1551754655-cd97e68e27c6?w=400&auto=format&fit=crop&q=80", desc: "Carefully milled yellow maize harvested from high-yield organic Rwandan farms." },
+            { name: "Sorghum", role: "Rich in iron, copper, and antioxidants; supports red blood cell production.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&auto=format&fit=crop&q=80", desc: "Native red sorghum known for robust nutritional value and easy digestibility." },
+            { name: "Finger Millet", role: "Exceptional source of natural calcium and amino acids for bone strength.", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop&q=80", desc: "Sprouted finger millet promoting optimal skeletal development in toddlers." },
+            { name: "Soybeans", role: "High-quality plant protein source crucial for muscle and tissue growth.", img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80", desc: "Roasted and dehulled organic soybeans providing complete essential amino acids." },
+            { name: "Peanuts (Groundnuts)", role: "Provides healthy fats, niacin, and protein for cognitive development.", img: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&auto=format&fit=crop&q=80", desc: "Freshly ground roasted peanuts adding rich texture and caloric density." },
+            { name: "Wheat Flour", role: "Supplies complex carbohydrates and B-complex vitamins.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&auto=format&fit=crop&q=80", desc: "Whole wheat enrichment flour for smooth porridge consistency." },
+            { name: "Amaranth Grains", role: "Ancient pseudocereal packed with lysine, magnesium, and protein.", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop&q=80", desc: "Pops of nutrient-dense amaranth grain for superior micronutrient profile." },
+            { name: "Rice Flour", role: "Hypoallergenic, easily digestible carbohydrate base for sensitive infants.", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop&q=80", desc: "Finely milled polished rice flour ensuring gentle gastrointestinal tolerance." },
+            { name: "Pumpkin Seeds", role: "Rich in zinc, iron, and omega-3 fatty acids for immune support.", img: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=400&auto=format&fit=crop&q=80", desc: "Raw pumpkin seed powder contributing vital minerals and healthy fats." },
+            { name: "Sunflower Seeds", role: "Delivers vitamin E, selenium, and cellular protection antioxidants.", img: "https://images.unsplash.com/photo-1551754655-cd97e68e27c6?w=400&auto=format&fit=crop&q=80", desc: "Nutrient-rich sunflower kernel meal for enhanced cellular health." },
+            { name: "Chia Seeds", role: "High in soluble fiber and omega-3 fatty acids for brain development.", img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400&auto=format&fit=crop&q=80", desc: "Superfood chia seed micro-powder for optimal cognitive nourishment." },
+            { name: "Flaxseeds", role: "Supports digestive health and anti-inflammatory pathways.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&auto=format&fit=crop&q=80", desc: "Milled golden flaxseed offering essential alpha-linolenic acid." },
+            { name: "Green Peas", role: "Supplies plant protein, vitamin K, and dietary fiber.", img: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&auto=format&fit=crop&q=80", desc: "Dehydrated green pea flour adding natural sweetness and amino acids." },
+            { name: "Beans Flour", role: "High-protein legume component for stunting prevention.", img: "https://images.unsplash.com/photo-1551754655-cd97e68e27c6?w=400&auto=format&fit=crop&q=80", desc: "Nutritious climbing bean flour adapted for infant digestibility." },
+            { name: "Oats", role: "Beta-glucan soluble fiber for sustained energy release and gut health.", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&auto=format&fit=crop&q=80", desc: "Rolled oat flour providing comforting texture and sustained satiety." },
+            { name: "Cassava Flour", role: "Readily accessible energy source rich in complex carbohydrates.", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&auto=format&fit=crop&q=80", desc: "Clean, high-grade cassava flour for smooth porridge viscosity." },
+            { name: "Sweet Potato Flour", role: "Natural source of beta-carotene (Vitamin A) and dietary antioxidants.", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=400&auto=format&fit=crop&q=80", desc: "Orange-fleshed sweet potato flour supporting eye health and immunity." },
+            { name: "Moringa Leaf Powder", role: "Powerhouse botanical providing iron, calcium, and multi-vitamins.", img: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&auto=format&fit=crop&q=80", desc: "Finely sifted moringa leaf powder for ultimate micronutrient fortification." }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            if(window.lucide) lucide.createIcons();
+
+            // Render Ingredients Grid
+            const grid = document.getElementById('ingredients-grid');
+            let gridHtml = '';
+            ingredients.forEach((ing, index) => {
+                gridHtml += `
+                    <div onclick="openIngredientModal(${index})" class="bg-slate-900 p-4 rounded-2xl border border-slate-800 hover:border-brand-500/50 cursor-pointer transition group flex flex-col items-center text-center space-y-3 shadow-lg">
+                        <div class="w-16 h-16 rounded-xl overflow-hidden bg-slate-800 relative">
+                            <img src="${ing.img}" alt="${ing.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.src='https://placehold.co/100x100/1e293b/22c55e?text=Bio'">
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-brand-400">#${index + 1}</div>
+                            <h4 class="text-sm font-bold text-white mt-0.5 line-clamp-1">${ing.name}</h4>
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = gridHtml;
+
+            // Check if already unlocked in session
+            if(localStorage.getItem('imikurire_funding_unlocked') === 'true') {
+                document.getElementById('access-form-container').classList.add('hidden');
+                document.getElementById('unlocked-details-container').classList.remove('hidden');
+            }
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            });
+
+            // Handle Institution Form Submission
             document.getElementById('institution-access-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 const orgName = document.getElementById('inst-org-name').value.trim();
@@ -32,115 +597,140 @@
                     `Please log in to your Magnifique Admin Portal on the website using your secret passcode (2299) to review and approve or deny this request.`
                 );
                 
-                // Open mailto link
                 window.location.href = `mailto:magnibmg@gmail.com?subject=${subject}&body=${body}`;
 
-                // Show success feedback
                 showCustomModal("Request Logged & Email Dispatched", 
                     `Thank you, ${orgName}. Your institutional access request has been sent to Magnifique (magnibmg@gmail.com).\n\n` +
                     `Request ID: ${newReq.id}\nStatus: Pending Admin Approval.`
                 );
 
                 document.getElementById('institution-access-form').reset();
-                closeInstitutionModal();
             });
+        });
 
-            // Admin Portal Logic
-            window.openAdminModal = function() {
-                document.getElementById('admin-login-modal').classList.remove('hidden');
-            };
+        // Ingredient Modal Functions
+        function openIngredientModal(index) {
+            const ing = ingredients[index];
+            document.getElementById('modal-img').src = ing.img;
+            document.getElementById('modal-title').textContent = ing.name;
+            document.getElementById('modal-desc').textContent = ing.desc;
+            document.getElementById('modal-role').textContent = ing.role;
+            document.getElementById('ingredient-modal').classList.remove('hidden');
+        }
 
-            window.closeAdminModal = function() {
+        function closeIngredientModal() {
+            document.getElementById('ingredient-modal').classList.add('hidden');
+        }
+
+        // Custom Modal helper
+        function showCustomModal(title, msg) {
+            document.getElementById('custom-modal-title').textContent = title;
+            document.getElementById('custom-modal-msg').textContent = msg;
+            document.getElementById('custom-modal').classList.remove('hidden');
+        }
+
+        // Admin Portal Logic
+        function openAdminModal() {
+            document.getElementById('admin-login-modal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-login-modal').classList.add('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+            document.getElementById('admin-passcode').value = '';
+        }
+
+        function verifyAdminPin() {
+            const pin = document.getElementById('admin-passcode').value.trim();
+            if(pin === '2299') {
                 document.getElementById('admin-login-modal').classList.add('hidden');
-                document.getElementById('admin-dashboard').classList.add('hidden');
-                document.getElementById('admin-passcode').value = '';
-            };
+                document.getElementById('admin-dashboard').classList.remove('hidden');
+                renderAdminRequests();
+            } else {
+                showCustomModal("Access Denied", "Incorrect passcode. Please enter the correct secret PIN.");
+            }
+        }
 
-            window.verifyAdminPin = function() {
-                const pin = document.getElementById('admin-passcode').value.trim();
-                if(pin === '2299') {
-                    document.getElementById('admin-login-modal').classList.add('hidden');
-                    document.getElementById('admin-dashboard').classList.remove('hidden');
-                    renderAdminRequests();
-                } else {
-                    showCustomModal("Access Denied", "Incorrect passcode. Please enter the correct PIN.");
-                }
-            };
+        function renderAdminRequests() {
+            const listContainer = document.getElementById('admin-requests-list');
+            const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
+            
+            if(pendingRequests.length === 0) {
+                listContainer.innerHTML = '<p class="text-slate-500 text-center py-8">No institutional requests found at this time.</p>';
+                return;
+            }
 
-            window.renderAdminRequests = function() {
-                const listContainer = document.getElementById('admin-requests-list');
-                const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
-                
-                if(pendingRequests.length === 0) {
-                    listContainer.innerHTML = '<p class="text-slate-500 text-center py-4">No institutional requests found at this time.</p>';
-                    return;
-                }
-
-                let html = '';
-                pendingRequests.forEach((req, index) => {
-                    const isApproved = req.status === 'approved';
-                    html += `
-                        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                            <div>
-                                <div class="font-bold text-white text-lg">${req.orgName}</div>
-                                <div class="text-sm text-slate-300">Email: <a href="mailto:${req.orgEmail}" class="text-emerald-400 underline">${req.orgEmail}</a></div>
-                                <div class="text-xs text-slate-400 mt-1">Requested: ${req.date} | ID: ${req.id}</div>
-                                <div class="mt-2 inline-block px-2 py-0.5 rounded text-xs font-semibold ${isApproved ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}">
-                                    ${isApproved ? 'APPROVED & UNLOCKED' : 'PENDING REVIEW'}
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-2 w-full sm:w-auto">
-                                ${!isApproved ? `
-                                    <button onclick="approveRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg text-sm transition">
-                                        Approve & Unlock
-                                    </button>
-                                ` : `
-                                    <button onclick="revokeRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white font-bold rounded-lg text-sm transition">
-                                        Revoke Access
-                                    </button>
-                                `}
-                                <button onclick="deleteRequest(${index})" class="px-3 py-2 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-lg text-sm transition" title="Delete">
-                                    <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                </button>
+            let html = '';
+            pendingRequests.forEach((req, index) => {
+                const isApproved = req.status === 'approved';
+                html += `
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                        <div>
+                            <div class="font-bold text-white text-lg">${req.orgName}</div>
+                            <div class="text-sm text-slate-300">Email: <a href="mailto:${req.orgEmail}" class="text-brand-400 underline">${req.orgEmail}</a></div>
+                            <div class="text-xs text-slate-500 mt-1">Requested: ${req.date} | ID: ${req.id}</div>
+                            <div class="mt-2 inline-block px-2.5 py-0.5 rounded text-xs font-semibold ${isApproved ? 'bg-brand-500/20 text-brand-300 border border-brand-500/30' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}">
+                                ${isApproved ? 'APPROVED & UNLOCKED' : 'PENDING REVIEW'}
                             </div>
                         </div>
-                    `;
-                });
-                listContainer.innerHTML = html;
-                if(window.lucide) lucide.createIcons();
-            };
+                        <div class="flex items-center gap-2 w-full sm:w-auto">
+                            ${!isApproved ? `
+                                <button onclick="approveRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-xl text-sm transition">
+                                    Approve & Unlock
+                                </button>
+                            ` : `
+                                <button onclick="revokeRequest(${index})" class="flex-1 sm:flex-none px-4 py-2 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl text-sm transition">
+                                    Revoke Access
+                                </button>
+                            `}
+                            <button onclick="deleteRequest(${index})" class="px-3 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl text-sm transition" title="Delete">
+                                <i data-lucide="trash-2" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            listContainer.innerHTML = html;
+            if(window.lucide) lucide.createIcons();
+        }
 
-            window.approveRequest = function(index) {
-                const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
-                if(pendingRequests[index]) {
-                    pendingRequests[index].status = 'approved';
-                    localStorage.setItem('imikurire_pending_requests', JSON.stringify(pendingRequests));
-                    
-                    // Unlock account details for the session
-                    localStorage.setItem('imikurire_funding_unlocked', 'true');
-                    
-                    renderAdminRequests();
-                    showCustomModal("Access Approved", `You have approved ${pendingRequests[index].orgName}. Account details are now unlocked.`);
-                }
-            };
-
-            window.revokeRequest = function(index) {
-                const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
-                if(pendingRequests[index]) {
-                    pendingRequests[index].status = 'pending';
-                    localStorage.setItem('imikurire_pending_requests', JSON.stringify(pendingRequests));
-                    localStorage.removeItem('imikurire_funding_unlocked');
-                    renderAdminRequests();
-                }
-            };
-
-            window.deleteRequest = function(index) {
-                const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
-                pendingRequests.splice(index, 1);
+        function approveRequest(index) {
+            const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
+            if(pendingRequests[index]) {
+                pendingRequests[index].status = 'approved';
                 localStorage.setItem('imikurire_pending_requests', JSON.stringify(pendingRequests));
+                
+                // Unlock account details for the session
+                localStorage.setItem('imikurire_funding_unlocked', 'true');
+                
                 renderAdminRequests();
-            };
-        });
+                showCustomModal("Access Approved", `You have approved ${pendingRequests[index].orgName}. Account details are now unlocked.`);
+                
+                // Update UI on main page if viewed
+                document.getElementById('access-form-container').classList.add('hidden');
+                document.getElementById('unlocked-details-container').classList.remove('hidden');
+            }
+        }
+
+        function revokeRequest(index) {
+            const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
+            if(pendingRequests[index]) {
+                pendingRequests[index].status = 'pending';
+                localStorage.setItem('imikurire_pending_requests', JSON.stringify(pendingRequests));
+                localStorage.removeItem('imikurire_funding_unlocked');
+                renderAdminRequests();
+                
+                document.getElementById('access-form-container').classList.remove('hidden');
+                document.getElementById('unlocked-details-container').classList.add('hidden');
+            }
+        }
+
+        function deleteRequest(index) {
+            const pendingRequests = JSON.parse(localStorage.getItem('imikurire_pending_requests') || '[]');
+            pendingRequests.splice(index, 1);
+            localStorage.setItem('imikurire_pending_requests', JSON.stringify(pendingRequests));
+            renderAdminRequests();
+        }
     </script>
 </body>
 </html>
